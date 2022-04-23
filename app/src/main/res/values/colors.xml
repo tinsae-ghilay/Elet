@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blueGreen">#3CAEA3</color>
+    <color name="lightBlue">#0ac</color>
+    <color name="Neon">#4C8EB5</color>
+    <color name="lightGrey">#ddd</color>
+    <color name="grey">#666</color>
+    <color name="darker_lightGray">#aaa</color>
+    <color name="super_lightGrey">#eee</color>
+    <color name="darkGrey">#333</color>
+    <color name="red_ish">#f60</color>
+    <!--widget colors-->
+    <color name="Neon_w">#BE4C8EB5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="widget_bg">#5B000000</color>
+</resources>

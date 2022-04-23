@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:orientation="horizontal"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/dates_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:textColor="@color/red_ish"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/abyssinica"
+            android:layout_weight="0.4"/>
+
+        <TextView
+            android:id="@+id/events_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:fontFamily="@font/abyssinica"
+            android:layout_weight="0.6"/>
+
+    </LinearLayout>
+</LinearLayout>

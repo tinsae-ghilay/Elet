@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tgk.Elet.GridViewItem
+    android:id="@+id/big_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center"
+    android:includeFontPadding="false"
+    android:textSize="18sp"
+    android:scrollbars="none"
+    android:paddingEnd="3dp"
+    android:paddingStart="3dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

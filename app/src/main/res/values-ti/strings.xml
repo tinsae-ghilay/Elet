@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ዕለት</string>
+    <string name="setting">ውህደት</string>
+    <string-array name="monthsList">
+        <item>መስከረም</item>
+        <item>ጥቅምቲ</item>
+        <item>ሕዳር</item>
+        <item>ታሕሳስ</item>
+        <item>ጥሪ</item>
+        <item>ለካቲት</item>
+        <item>መጋቢት</item>
+        <item>ሚያዝያ</item>
+        <item>ግንቦት</item>
+        <item>ሰነ</item>
+        <item>ሓምለ</item>
+        <item>ነሓሰ</item>
+        <item>ጳጉሜን</item>
+    </string-array>
+    <string-array name="months">
+        <item>ጥሪ</item>
+        <item>ለካቲት</item>
+        <item>መጋቢት</item>
+        <item>ሚያዝያ</item>
+        <item>ግንቦት</item>
+        <item>ሰነ</item>
+        <item>ሓምለ</item>
+        <item>ነሓሰ</item>
+        <item>መስከረም</item>
+        <item>ጥቅምቲ</item>
+        <item>ሕዳር</item>
+        <item>ታሕሳስ</item>
+    </string-array>
+    <string-array name="week_days">
+        <item>ሰንበት</item>
+        <item>ሰኑይ</item>
+        <item>ሰሉስ</item>
+        <item>ረቡዕ</item>
+        <item>ሓሙስ</item>
+        <item>ዓርቢ</item>
+        <item>ቀዳም</item>
+    </string-array>
+    <string name="select_lang">ቋንቋ ምረጽ</string>
+    <string name="done">ወድእ</string>
+    <string name="restarted">ኣፕ ከም ብሓድሽ ተበራቢሩ ኣሎ።</string>
+    <string name="promptExit">ኣፕ ንምዕጻው እንደገና ንድሕሪት ጠውቕ</string>
+    <string name="era">ዘመነ</string>
+    <string-array name="evangelists">
+        <item>ዮሓንስ</item>
+        <item>ማቴዎስ</item>
+        <item>ማርቆስ</item>
+        <item>ሉቃስ</item>
+    </string-array>
+    <string-array name="holy_days">
+        <item>ወንጌላዊ</item>
+        <item>ባሕቲ መስከረም</item>
+        <item>አበቅቴ</item>
+        <item>መጥቅዕ </item>
+        <item>ጾመ ነነዌ</item>
+        <item>ምጅማር ጾመ-ኣርባዓ</item>
+        <item>ደብረ ዘይት</item>
+        <item>ሆሳዕና</item>
+        <item>ዓርቢ ስቕለት</item>
+        <item>ፋሲካ</item>
+        <item>ርክበ ካህናት</item>
+        <item>ዕርገት</item>
+        <item>ጰራቅሊጦስ</item>
+        <item>ጾመ ሃዋርያት</item>
+        <item>ጾመ ድሕነት</item>
+    </string-array>
+    <string name="no_holidays">ዝተፈልጠ ባዓል የብላን</string>
+    <string name="holidays_title">ባዓላትን አጽዋማትን</string>
+    <string-array name="national_holidays">
+        <item>ሓድሽ ዓመት (ቅዱስ ዮሓንስ)</item>
+        <item>መስቀል</item>
+        <item>ጾመ ነብያት</item>
+        <item>ልደት ፈረንጂ</item>
+        <item>ሓድሽ ዓመት ፈረንጂ</item>
+        <item>ልደት</item>
+        <item>ግዝረት</item>
+        <item>ጥምቀት</item>
+        <item>ቃና ዘ ገሊላ</item>
+        <item>መዓልቲ ሰራሕተኛታት</item>
+        <item>ጾመ ፍልሰታ</item>
+        <item>ደብረ ታቦር</item>
+        <item>ፍልሰታ (ኣሸንዳ / ማርያ )</item>
+        <item>ጾመ ገሃድ</item>
+        <item>ቁስቛም</item>
+        <item>ማርያም ጽዮን</item>
+        <item>ባኣታ ማርያም</item>
+        <item>ኣስተርእዮ</item>
+        <item>ኪዳነ ምሕረት</item>
+        <item>ልደታ</item>
+        <item>ፅንሰታ</item>
+        <item>ሩፋኤል</item>
+    </string-array>
+    <string-array name="daily_events">
+        <item>Empty</item>
+        <item>ልደታ ማርያም</item>
+        <item>ኢዮብ ጻድቅ</item>
+        <item>ባኣታ ማርያም</item>
+        <item>ዮሓንስ ወልደ ነጎድጓድ</item>
+        <item>ጋብር</item>
+        <item>የሱስ/ቁስቁዋም</item>
+        <item>ስላሴ</item>
+        <item>አባ ኪሮስ</item>
+        <item>ቶማስ ሃዋርያ</item>
+        <item>መስቀል</item>
+        <item>ኢያቄም ወ ሃና</item>
+        <item>ሚካኤል መልኣኽ</item>
+        <item>እግዚአብሔር አብ</item>
+        <item>አቡነ አረጋዊ</item>
+        <item>ቄርቆስ</item>
+        <item>ኪዳነ ምህረት</item>
+        <item>ቅዱስ እስጢፋኖስ</item>
+        <item>ፊልጶስ ሐዋርያ</item>
+        <item>ገብሪኤል</item>
+        <item>ጽንሰታ</item>
+        <item>ማርያም</item>
+        <item>ኡራኤል</item>
+        <item>ጊዮርጊስ</item>
+        <item>አቡነ ተኽለ ሃይማኖት</item>
+        <item>መርቆሬዎስ</item>
+        <item>ቅዱስ ዮሴፍ</item>
+        <item>መድሃኔ ዓለም</item>
+        <item>ቆስጠንጢኖስ</item>
+        <item>ባዓለ እግዚኣብሄር(የሱስ)</item>
+        <item>ማርቆስ ወንጌላዊ</item>
+    </string-array>
+    <string name="bahre_hasab">ባሕረ ሓሳብ</string>
+    <string name="converter">ዕለት መቐየሪ</string>
+    <string name="lunar">ወርሓዊ ባዓላት</string>
+    <string name="annual">ዓመታዊ ባዓላት</string>
+    <string name="calculate">ሕሰብ</string>
+    <string name="convert">ቀይር</string>
+    <string name="insert_year_here">ዓመተ ምህረት ብግእዝ ኣእቱ</string>
+    <string name="from_geez">ካብ ግእዝ</string>
+    <string name="from_Gregorian">ካብ ፈረንጂ</string>
+    <string name="home">ዓ.ኣዋርሕ</string>
+    <string name="holidays">ባዓላት</string>
+    <string name="extra">ተወሳኺ</string>
+    <string-array name="eritrean">
+        <item>ፈንቅል (ኤርትራ)</item>
+        <item>ማዓልቲ ደቀንስትዮ (ኤርትራ)</item>
+        <item>ማዓልቲ ናጽነት (ኤርትራ)</item>
+        <item>ማዓልቲ ሰማእታት (ኤርትራ)</item>
+        <item>ሓደ መስከረም (ኤርትራ)</item>
+    </string-array>
+    <string-array name="tigraian">
+        <item>11 ለካቲት (ትግራይ)</item>
+        <item>ኲናት ዓድዋ (ትግራይ)</item>
+        <item>ማዓልቲ ሓርበኛታት (ትግራይ)</item>
+        <item>ውድቀት ደርግ (ትግራይ)</item>
+    </string-array>
+    <string name="select_eritrean">ሃገራዊ ባዓላት ኤርትራ ኣርኢ</string>
+    <string name="select_tigray">ሃገራዊ ባዓላት ትግራይ ኣርኢ</string>
+    <string name="show_gregorian">ናይ ፈረጂ ዕለታት ውን ኣርኢ</string>
+    <string name="widget_enable" >መስኮት ዕለት ኣኽእል</string>
+    <string name="widget_text">ኣብዞም ዝስዕቡ መድረኻት ርኢቶን ሚዛንን ለግሱ/ሳ/ልና</string>
+</resources>

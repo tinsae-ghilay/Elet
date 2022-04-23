@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.tgk.Elet.CalendarFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_calendar" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_converter"
+        android:name="com.tgk.Elet.ConverterFragment"
+        android:label="@string/converter"
+        tools:layout="@layout/fragment_converter" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_bahrehasab"
+        android:name="com.tgk.Elet.BahreHasabFragment"
+        android:label="@string/bahre_hasab"
+        tools:layout="@layout/fragment_bahre_hasab" >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_holidays"
+        android:name="com.tgk.Elet.HolidaysFragment"
+        android:label="@string/holidays"
+        tools:layout="@layout/fragment_holidays" />
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.tgk.Elet.SettingsFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>

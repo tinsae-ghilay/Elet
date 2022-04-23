@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Elet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Neon</item>
+        <item name="colorPrimaryDark">@color/Neon</item>
+        <item name="colorAccent">@color/Neon</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="textInputStyle">@style/AppTextField</item>
+        <item name="colorControlHighlight">@color/blueGreen</item>
+        <item name="toolbarStyle">@style/MyToolbar</item>
+        <item name="android:windowBackground">@drawable/background_window</item>
+        <item name="android:navigationBarColor">@color/Neon</item>
+    </style>
+
+    <style name="AppTextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/Neon</item>
+        <item name="boxCornerRadiusBottomEnd">2dp</item>
+        <item name="borderWidth">1dp</item>
+        <item name="color">@color/Neon</item>
+    </style>
+
+    <style name="MyToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:theme">@style/MyToolbarTheme</item>
+    </style>
+
+    <style name="MyToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="textBackground">@color/lightGrey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="popupMenuBackground">@color/Neon</item>
+
+    </style>
+
+    <style name="ThemeOverlay.MyApplication.AppWidgetContainer" parent="">
+        <item name="appWidgetBackgroundColor">@color/Neon</item>
+        <item name="appWidgetTextColor">@color/white</item>
+    </style>
+</resources>

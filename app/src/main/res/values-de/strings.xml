@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ዕለት</string>
+    <string name="setting">Einstellung</string>
+    <string name="select_lang">Sprache wählen</string>
+    <string-array name="monthsList">
+        <item>Sept</item>
+        <item>Okt</item>
+        <item>Nov</item>
+        <item>Dez</item>
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mär</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Aug</item>
+        <item>Pag</item>
+    </string-array>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mär</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Aug</item>
+        <item>Sept</item>
+        <item>Okt</item>
+        <item>Nov</item>
+        <item>Dez</item>
+    </string-array>
+    <string-array name="week_days">
+        <item>Son</item>
+        <item>Mon</item>
+        <item>Die</item>
+        <item>Mit</item>
+        <item>Don</item>
+        <item>Fri</item>
+        <item>Sam</item>
+    </string-array>
+    <string name="done">Fertig</string>
+    <string name="restarted">App wurde neu gestartet</string>
+    <string name="promptExit">Zum Beenden erneut zuruck drücken</string>
+    <string name="era">Ära von</string>
+    <string-array name="evangelists">
+        <item>Johannes</item>
+        <item>Matthäus</item>
+        <item> Markus</item>
+        <item>Lukas</item>
+    </string-array>
+    <string-array name="holy_days">
+        <item>Ära</item>
+        <item>First Day</item>
+        <item>Abeqte</item>
+        <item>Proklamationstag</item>
+        <item>Fasten von Ninweh</item>
+        <item>Anfang 40erfasten</item>
+        <item>Ölberg</item>
+        <item>Palmsonntag</item>
+        <item>Karfreitag</item>
+        <item>Ostern</item>
+        <item>Tag der Priester</item>
+        <item>Christi Himmelfahrt</item>
+        <item>Paraclete</item>
+        <item>Apostelsfasten</item>
+        <item>Erlösungsfasten</item>
+    </string-array>
+    <string name="no_holidays">hat keine bekannten Feiertage</string>
+    <string name="holidays_title">Feirtage Fasten</string>
+    <string-array name="national_holidays">
+        <item>Neues Jahr (St.Johannes)</item>
+        <item>Heilige Kreuz</item>
+        <item>Fasten der Propheten</item>
+        <item>Weihnachten</item>
+        <item>Neues Jahr(Gregorisch)</item>
+        <item>Lidet(Geez Weihnachten)</item>
+        <item>Beschneidung Christi</item>
+        <item>Dreikönigsfest</item>
+        <item>Hochzeit zu Kana</item>
+        <item>Tag der Arbeit</item>
+        <item>Fasten der Mariah Himmelfahrt</item>
+        <item>Berg Tabor</item>
+        <item>Mariah Himmelfahrt (Ashenda/Mariah)</item>
+        <item>Fasten zum Verständnis </item>
+        <item>Exil in Ägypten </item>
+        <item>St.Mary of Zion</item>
+        <item>Hl.Maria von Zion </item>
+        <item>Offenbarung der Hl.Maria</item>
+        <item>Promise of Redemption</item>
+        <item>Versprechen der Erlösung </item>
+        <item>Mariä Empfängnis</item>
+        <item>Engel Rufael</item>
+    </string-array>
+    <string-array name="daily_events">
+        <item></item>
+        <item>Geburt der Heiligen Maria</item>
+        <item>Job der Pius</item>
+        <item>Präsentation von Maria</item>
+        <item>Johannes der Täufer</item>
+        <item>St.Ghaber</item>
+        <item>Jesus/Exil nach Ägypten</item>
+        <item>Heilige Dreifaltigkeit</item>
+        <item>Abbott Kiros</item>
+        <item>Thomas der Apostel</item>
+        <item>Das Heilige Kreuz</item>
+        <item>Joachim und Anne</item>
+        <item>Engel Michael</item>
+        <item>Gott der Vater</item>
+        <item>Abbott Aregawi</item>
+        <item>St.kyriakos</item>
+        <item>Versprechen der Erlösung </item>
+        <item>St.Stephan</item>
+        <item>Philip der Apostel</item>
+        <item>Engel Gabriel</item>
+        <item>Mariä Empfängnis</item>
+        <item>St.Mary</item>
+        <item>Uriel</item>
+        <item>St.George</item>
+        <item>Abbott Teklehaimanot</item>
+        <item>St.Merkurius</item>
+        <item>St.Joseph</item>
+        <item>Heiliger Erlöser</item>
+        <item>St.konstantine</item>
+        <item>Jesus</item>
+        <item>Markus der Apostel</item>
+    </string-array>
+    <string name="bahre_hasab">B.Hasab</string>
+    <string name="converter">Konverter </string>
+    <string name="lunar">Heilige Monat</string>
+    <string name="annual">Hailige Jahr</string>
+    <string name="calculate">Rechnen</string>
+    <string name="convert">umsetzen</string>
+    <string name="insert_year_here">Geez Jahr eingeben</string>
+    <string name="from_geez">von Geez</string>
+    <string name="from_Gregorian">von Gregorisch</string>
+    <string name="home">Kalendar</string>
+    <string name="holidays">Feirtage</string>
+    <string-array name="eritrean">
+        <item>Gedenken an Fenkil (Eritrea)</item>
+        <item>Frauentag (Eritrea)</item>
+        <item>Unabhängigkeitstag (Eritrea)</item>
+        <item>Märtyrer Tag (Eritrea)</item>
+        <item>Tag der Revolution (Eritrea)</item>
+    </string-array>
+    <string-array name="tigraian">
+        <item>Tag der Revolution (Tigray)</item>
+        <item>Sieg von Adwa (Tigray)</item>
+        <item>Tag der Patrioten (Tigray)</item>
+        <item>Niederlage von Derg (Tigray)</item>
+    </string-array>
+    <string name="extra">Extra</string>
+    <string name="select_eritrean">Feiertage in Eritrea</string>
+    <string name="select_tigray">Feiertage in Tigray</string>
+    <string name="show_gregorian">Mit Gregorisch Datum</string>
+    <string name="widget_enable">Widget Aktivieren</string>
+    <string name="widget_text">Bitte bewerten, liken, teilen Sie uns auf… </string>
+</resources>

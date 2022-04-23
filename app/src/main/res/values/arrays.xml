@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="languages_list">
+        <item>ትግርኛ</item>
+        <item>English</item>
+        <item>Deutsch</item>
+    </string-array>
+</resources>

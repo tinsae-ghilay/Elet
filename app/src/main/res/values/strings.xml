@@ -1,0 +1,166 @@
+<resources>
+    <!-- generally used strings -->
+    <string name="app_name">ዕለት</string>
+    <string name="done">Done</string>
+    <string name="holidays_title">Feasts n Fasts</string>
+    <string name="setting">Setting</string>
+
+    <!-- Preference Titles -->
+    <!-- Messages Preferences -->
+    <string name="select_lang">Select Language</string>
+    <string name="restarted">App has been restarted</string>
+    <string name="from_geez">From Geez</string>
+    <string name="from_Gregorian">From Gregorian</string>
+    <!-- popup strings-->
+    <string-array name="monthsList">
+        <item>Sept</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>Aug</item>
+        <item>Pag</item>
+    </string-array>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>Aug</item>
+        <item>Sept</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+    <string-array name="week_days">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <string name="promptExit">Press back again to exit</string>
+    <string name="era">Era of</string>
+    <string-array name="evangelists">
+        <item>John</item>
+        <item>Mathew</item>
+        <item>Mark</item>
+        <item>Luke</item>
+    </string-array>
+    <string-array name="holy_days">
+        <item>Era</item>
+        <item>First Day</item>
+        <item>Abeqtie</item>
+        <item>Proclamation"</item>
+        <item>Fast of ninweh</item>
+        <item>Great fast starts</item>
+        <item>Mount of olives</item>
+        <item>Palm sunday</item>
+        <item>Good friday</item>
+        <item>Easter</item>
+        <item>Meeting of Priests</item>
+        <item>Ascension</item>
+        <item>Paraclete</item>
+        <item>Fast of Apostles</item>
+        <item>Fast of salvation</item>
+    </string-array>
+    <string name="no_holidays">has no known holidays.</string>
+    <string-array name="national_holidays">
+        <item>Geez New Year(St.John)</item>
+        <item>Holy Cross</item>
+        <item>Fast of prophets</item>
+        <item>Christmas</item>
+        <item>New year</item>
+        <item>Geez christmas</item>
+        <item>Circumcision of christ</item>
+        <item>Epiphany</item>
+        <item>wedding at Cana</item>
+        <item>May day</item>
+        <item>Fast of assumption</item>
+        <item>Mt. Tabor</item>
+        <item>Assumption of Mary(Ashenda/Mariah)</item>
+        <item>Fast of comprehension</item>
+        <item>Exile to Egypt</item>
+        <item>St.Mary of Zion</item>
+        <item>Presentation of Mary</item>
+        <item>Vision of Mary</item>
+        <item>Promise of Redemption</item>
+        <item>Birth of St.Mary</item>
+        <item>Immaculate conception</item>
+        <item>Angel Rufael</item>
+    </string-array>
+    <string-array name="daily_events">
+        <item></item>
+        <item>Birth of St.Mary</item>
+        <item>Job the pius</item>
+        <item>Presentation of Mary</item>
+        <item>John the baptist</item>
+        <item>St.Ghaber</item>
+        <item>Jesus/Exile to Egypt</item>
+        <item>Holy trinity</item>
+        <item>Abbot Kiros</item>
+        <item>Thomas the Apostle</item>
+        <item>The Holy Cross</item>
+        <item>Joachim and Anne</item>
+        <item>Angel Michael</item>
+        <item>God the father</item>
+        <item>Abbot Aregawi</item>
+        <item>St.kyriakos</item>
+        <item>Promise of Redemption</item>
+        <item>St.Stephan</item>
+        <item>Philip the Apostle </item>
+        <item>Angel Gabriel</item>
+        <item>Immaculate conception</item>
+        <item>St.Mary</item>
+        <item>Uriel</item>
+        <item>St.George</item>
+        <item>Abbot Teklehaimanot</item>
+        <item>St.Merkurius </item>
+        <item>Saint Joseph</item>
+        <item>Holy savior</item>
+        <item>St.Constantine</item>
+        <item>Jesus</item>
+        <item>Markus the Apostle</item>
+    </string-array>
+    <string name="bahre_hasab">B.Hasab</string>
+    <string name="converter">Converter</string>
+    <string name="lunar">Daily Holidays</string>
+    <string name="annual">Annual Holidays</string>
+    <string name="calculate">Calculate</string>
+    <string name="convert">Convert</string>
+    <string name="insert_year_here">insert year here</string>
+    <string name="home">Calendar</string>
+    <string name="holidays">Holidays</string>
+    <string-array name="eritrean">
+        <item>Fenkil Commemoration (Eritrea)</item>
+        <item>Women\'s day (Eritrea)</item>
+        <item>Independence day (Eritrea)</item>
+        <item>Martyrs day (Eritrea)</item>
+        <item>September 1 (Eritrea)</item>
+    </string-array>
+    <string-array name="tigraian">
+        <item>Lekatit 11 (Tigray)</item>
+        <item>Victory of Adwa (Tigray)</item>
+        <item>Patriots day (Tigray)</item>
+        <item>Fall of Dergue (Tigray)</item>
+    </string-array>
+    <string name="extra">Extra</string>
+    <string name="select_eritrean">Show  holidays in Eritrea</string>
+    <string name="select_tigray">show holidays in Tigray</string>
+    <string name="show_gregorian">Along with Gregorian dates</string>
+    <string name="widget_enable">Enable widget</string>
+    <string name="widget_text">Please Rate, Like, share us on…</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+</resources>

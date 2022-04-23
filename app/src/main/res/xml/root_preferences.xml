@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:layout="@layout/fragment_setting"
+        />
+        <ListPreference
+            app:entries="@array/languages_list"
+            app:entryValues="@array/languages_list"
+            app:key="lang"
+            android:icon="@drawable/locale"
+            app:title="@string/select_lang"
+            app:useSimpleSummaryProvider="true" />
+    <PreferenceCategory
+        android:title="@string/extra">
+        <SwitchPreferenceCompat
+            android:icon="@drawable/ic_eritrea"
+            app:key="eritrea"
+            android:title="@string/select_eritrean"/>
+        <SwitchPreferenceCompat
+            app:key="tigray"
+            android:icon="@drawable/ic_tigray"
+            android:title="@string/select_tigray"/>
+        <SwitchPreferenceCompat
+            app:key="gregorian"
+            android:icon="@drawable/switch_calendar"
+            android:title="@string/show_gregorian"/>
+    </PreferenceCategory>
+    <Preference
+        android:layout="@layout/setting_buttons"/>
+</PreferenceScreen>

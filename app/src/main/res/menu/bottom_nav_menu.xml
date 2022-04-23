@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/calendar"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/navigation_converter"
+        android:icon="@drawable/convert"
+        android:title="@string/converter" />
+
+    <item
+        android:id="@+id/navigation_bahrehasab"
+        android:icon="@drawable/bahrehasab"
+        android:title="@string/bahre_hasab" />
+    <item
+        android:id="@+id/navigation_holidays"
+        android:icon="@drawable/holidays"
+        android:title="@string/holidays" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/locale"
+        android:title="@string/setting" />
+
+</menu>

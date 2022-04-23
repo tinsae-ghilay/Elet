@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/widget_bg"
+    android:id="@+id/widget"
+    android:theme="@style/ThemeOverlay.MyApplication.AppWidgetContainer">
+    <TextView
+        android:id="@+id/holiday_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:layout_marginBottom="-6dp"
+        android:fontFamily="@font/abyssinica"
+        android:textColor="@color/red_ish"/>
+    <TextClock
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/holiday_today"
+        android:gravity="center"
+        android:fontFamily="sans-serif-thin"
+        android:format12Hour="hh:mm"
+        android:layout_marginBottom="-6dp"
+        android:layout_marginTop="-6dp"
+        android:textColor="?attr/appWidgetTextColor"/>
+    <!-- divider and months from here -->
+    <TextView
+        android:id="@+id/day_geez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/appWidgetTextColor"
+        android:layout_above="@+id/geez_date"
+        android:layout_toStartOf="@id/clock"
+        android:layout_alignParentStart="true"
+        android:padding="8dp"
+        android:gravity="end"
+        android:fontFamily="@font/abyssinica"
+        android:background="@drawable/underline"/>
+    <!--TextView
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/appWidgetTextColor"
+        android:text="|"/-->
+    <TextView
+        android:id="@+id/day_latin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/appWidgetTextColor"
+        android:fontFamily="@font/abyssinica"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:layout_toEndOf="@id/clock"
+        android:background="@drawable/underline"
+        android:layout_above="@+id/gregorian_date"/>
+    <!-- divider and months to here -->
+
+    <TextView
+        android:id="@+id/geez_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="8dp"
+        android:textColor="?attr/appWidgetTextColor"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/abyssinica" />
+    <TextView
+        android:id="@+id/gregorian_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        
+        android:text="the text"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/abyssinica"
+        android:textColor="?attr/appWidgetTextColor"/>
+</RelativeLayout>

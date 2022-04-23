@@ -1,0 +1,64 @@
+<androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+    style="@style/MyToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/Neon"
+    android:gravity="bottom"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_margin="0dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/farmer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/datum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/lightGrey"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/logo"
+            android:fontFamily="@font/abyssinica"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/era"
+            android:textColor="@color/lightGrey"
+            android:textSize="16sp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/apostle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/abyssinica"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/apostle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="16sp"
+            android:textColor="@color/red_ish"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/abyssinica"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.Toolbar>
