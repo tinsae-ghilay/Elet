@@ -15,11 +15,11 @@ this Calendar is designed with the traditional mobile calendar UI in mind, where
 and the displayed months events are listed below.
 
 <div>
-  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300" padding="3">
   <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300">
-  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300">
-  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300">
-  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300">
+  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/converter.png" width="300">
+  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/anual.png" width="300">
+  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/hasab.png" width="300">
+  <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/options.png" width="300">
 </div>
 
 ## Contributions
