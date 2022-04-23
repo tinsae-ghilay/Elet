@@ -13,11 +13,9 @@ for now #Java, I am using Joda time for converting between Geez and Gregorian Da
 
 this Calendar is designed with the traditional mobile calendar UI in mind, where scrolling left and right changes months that are displayed on screen
 and the displayed months events are listed below.
+<img srs="
 
-![alt text1][logo]
-
-[logo]: https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png "screen shot of the apps home fragment"
-
+<img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="600">
 ## Contributions
 
 any suggestion for improvement is very welcome. I am also in need of collaboration if you are interested.
