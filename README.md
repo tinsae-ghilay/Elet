@@ -22,6 +22,8 @@ and the displayed months events are listed below. see the screenshots below for 
   <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/options.png" width="300">
 </div>
 
+widgets are also included in the last update.
+
 ## Contributions
 
 any suggestion for improvement is very welcome. I am also in need of collaboration if you are interested.
