@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -82,7 +83,13 @@ public class BahreHasabFragment extends Fragment {
     void calculateBahreHasab(){
         String input= Objects.requireNonNull(text.getText()).toString().trim();
         if (!TextUtils.isEmpty(input)) {
-            int year=Integer.parseInt(String.valueOf(text.getText()));
+            int year;
+            try {
+                year=Integer.parseInt(String.valueOf(text.getText()));
+            }catch (Exception exception){
+                year=new CurrentDate().getCurrentGeezYear();
+                Toast.makeText(requireContext(),"Geez year must only contain numbers",Toast.LENGTH_LONG).show();
+            }
             BahreHasab h=new BahreHasab(year);
             dates=h.getArrayOfHolidays(requireContext());
             adapter=new listAdapter(getContext(),baalat,dates,false);
