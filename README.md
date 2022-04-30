@@ -21,6 +21,7 @@ and the displayed months events are listed below.
     <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/options.png" width="300"margin="50">
     <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300"margin="50">
 </div>
+
 ## Contributions
 
 any suggestion for improvement is very welcome. I am also in need of collaboration if you are interested.
