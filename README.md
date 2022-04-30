@@ -22,7 +22,7 @@ and the displayed months events are listed below.
     <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/anual.png" width="300"margin="50">
     <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/hasab.png" width="300"margin="50">
     <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/options.png" width="300"margin="50">
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300"margin="50">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/widgets.png" width="300"margin="50">
 </div>
 
 ## Contributions
