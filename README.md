@@ -13,14 +13,13 @@ for now #Java, I am using Joda time for converting between Geez and Gregorian Da
 
 this Calendar is designed with the traditional mobile calendar UI in mind, where scrolling left and right changes months that are displayed on screen
 and the displayed months events are listed below.
-![image]("https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png"){: height="75px" width="300px" style="float:left; padding-right:10px" }
 <div>
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300" margin="10">
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/converter.png" width="300"margin="10">
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/anual.png" width="300"margin="10">
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/hasab.png" width="300"margin="10">
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/options.png" width="300"margin="10">
-    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300"margin="10">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300" margin="50">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/converter.png" width="300"margin="50">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/anual.png" width="300"margin="50">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/hasab.png" width="300"margin="50">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/options.png" width="300"margin="50">
+    <img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300"margin="50">
 </div>
 ## Contributions
 
