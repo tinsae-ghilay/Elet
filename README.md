@@ -15,7 +15,8 @@ this Calendar is designed with the traditional mobile calendar UI in mind, where
 and the displayed months events are listed below.
 <img srs="
 
-<img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="600">
+<img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300">
+<img src="https://github.com/tinsae-ghilay/tinsae-ghilay.github.io/blob/main/res/month.png" width="300">
 ## Contributions
 
 any suggestion for improvement is very welcome. I am also in need of collaboration if you are interested.
