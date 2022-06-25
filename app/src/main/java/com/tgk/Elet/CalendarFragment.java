@@ -67,11 +67,7 @@ public class CalendarFragment extends Fragment {
         daily_events=getResources().getStringArray(R.array.daily_events);
         monthsList = getResources().getStringArray(R.array.monthsList);
         // declare the date
-        try {
-            declareDate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        declareDate();
         // Inflating Views for displaying days of the week.
         setWeekDays();
         // back and forth navigation buttons for calendar
@@ -86,7 +82,6 @@ public class CalendarFragment extends Fragment {
         }
         // display holidays of this month.
         h_list=CalendarBinding.eventsList;
-        //displayList(getActivity(),gm,gy);
         // snap-it like it's a(view)Pager!
         SnapHelper helper = new PagerSnapHelper();
         helper.attachToRecyclerView(recyclerView);
@@ -96,7 +91,7 @@ public class CalendarFragment extends Fragment {
         calendar_title=CalendarBinding.calendarTitle;
         calendar_title.setOnClickListener(view -> {
             try {
-                onReturnClick(view);
+                onReturnClick();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -171,7 +166,6 @@ public class CalendarFragment extends Fragment {
     private void initCalendarNavButtons() {
         next=CalendarBinding.next;
         back=CalendarBinding.back;
-        //CalendarView calendarView=new CalendarView(requireActivity());
         next.setOnClickListener(this::onNextClick);
         back.setOnClickListener(this::onBackClick);
     }
@@ -185,7 +179,7 @@ public class CalendarFragment extends Fragment {
         recyclerView.smoothScrollBy(-(SCREEN_WIDTH), 0);
     }
     // navigate to start
-    public void onReturnClick(View view)  {
+    public void onReturnClick()  {
         resetCalendar();
     }
     // width of screen used for scrolling on navigation buttons click.
