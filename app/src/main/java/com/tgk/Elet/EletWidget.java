@@ -97,9 +97,6 @@ public class EletWidget extends AppWidgetProvider {
             }
         }
         //Log.d("WIDGET", "Updated successfully at *****************************"+Calendar.getInstance().getTime());
-        //Log.d("Time now is ",currentDate.getTimeNow());
-        // Once it is updated, start another plan to Update it the next Day.
-        //planUpdateAtMidNight(context);
     }
 
     @Override
@@ -166,11 +163,6 @@ public class EletWidget extends AppWidgetProvider {
         if ((intent.getAction().equals(UPDATE))||(intent.getAction().equals(BOOTED))){
             // establish the current date
             //TODO check if date needs to be initiated
-            /*try {
-                currentDate=new CurrentDate();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(getComponentName(context));
             for (int id : ids) {
