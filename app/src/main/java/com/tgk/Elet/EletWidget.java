@@ -27,7 +27,6 @@ public class EletWidget extends AppWidgetProvider {
     final  static String UPDATE="android.appwidget.action.APPWIDGET_UPDATE";
     final static  String BOOTED="android.intent.action.BOOT_COMPLETED";
     int FLAG;
-    //CurrentDate currentDate;
     GeezDate geezDate;
     DateLocal dateLocal;
     Calendar calendar;
@@ -42,11 +41,10 @@ public class EletWidget extends AppWidgetProvider {
     void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId){
         // establish the current date
-        //currentDate=new CurrentDate();// Calendar.getInstance()
         geezDate=GeezDate.now();
         dateLocal=geezDate.to();
 
-        int today=geezDate.dayOfTheWeek();//currentDate.getTodayInGeez();//(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
+        int today=geezDate.dayOfTheWeek();
         // Construct the RemoteViews object
         boolean[] booleans=setBooleans(context);
         boolean eritrean=booleans[0];
@@ -74,10 +72,8 @@ public class EletWidget extends AppWidgetProvider {
         }
         views.setTextViewText(R.id.geez_date, geezDate.dayOfMonth
                 +"  "+geezMonths[geezDate.month-1]+",  "+ geezDate.year);
-        //views.setTextViewText(R.id.week_day_geez,week_geez[today]);
         views.setTextViewText(R.id.day_geez,week_geez[today]);
         views.setTextViewText(R.id.day_latin,week_latin[today]);
-        //views.setTextViewText(R.id.week_day_latin,week_latin[today]);
         views.setTextViewText(R.id.gregorian_date, dateLocal.dayOfMonth
                 +"  "+latinMonths[dateLocal.month-1]+",  "+ dateLocal.year);
 
@@ -151,7 +147,7 @@ public class EletWidget extends AppWidgetProvider {
                     alarmIntent);
             //Log.d("Alarm set"," Only Exact");
         }
-        //Log.d("Alarm and intent",""+alarmMgr.toString()+" "+alarmIntent.toString());
+        // Log.d("Alarm and intent",""+alarmMgr.toString()+" "+alarmIntent.toString());
         //Log.d("WIDGET","Update planned********************************* for "+(calendar.getTime()));
     }
 
