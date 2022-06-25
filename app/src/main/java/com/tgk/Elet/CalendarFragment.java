@@ -75,11 +75,7 @@ public class CalendarFragment extends Fragment {
         //title for the calendar table. i.e month and year
         initCalendarTitle();
         //setting up RecyclerView. its LayOut manager and adapter
-        try {
-            initRecyclerView();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        initRecyclerView();
         // display holidays of this month.
         h_list=CalendarBinding.eventsList;
         // snap-it like it's a(view)Pager!
@@ -89,13 +85,7 @@ public class CalendarFragment extends Fragment {
 
     private void initCalendarTitle() {
         calendar_title=CalendarBinding.calendarTitle;
-        calendar_title.setOnClickListener(view -> {
-            try {
-                onReturnClick();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        calendar_title.setOnClickListener(view -> onReturnClick());
         TextView event_day=CalendarBinding.today;
         String event=gd+" - "+daily_events[gd];
         event_day.setText(event);
@@ -221,11 +211,7 @@ public class CalendarFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        try {
-            resetCalendar();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        resetCalendar();
     }
     void setWeekDays(){
         String[] week_days=getResources().getStringArray(R.array.week_days);// name of days of the week.
