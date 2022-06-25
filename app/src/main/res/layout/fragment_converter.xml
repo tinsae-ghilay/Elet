@@ -120,10 +120,22 @@
             android:fontFamily="@font/abyssinica"
             android:textSize="14sp" />
     </LinearLayout>
-    <LinearLayout
+    <TextView
+        android:id="@+id/day_of_week"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/res"
+        android:textSize="18sp"
+        android:elegantTextHeight="true"
+        android:textColor="@color/red_ish"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/abyssinica"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/day_of_week"
         android:background="@color/lightGrey"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp">

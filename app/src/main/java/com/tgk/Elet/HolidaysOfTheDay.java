@@ -22,7 +22,7 @@ public class HolidaysOfTheDay {
         this.month=month;
         this.bahreHasab=new BahreHasab(y);
     }
-    ArrayList<String> getExtendedList(){
+    ArrayList<String> getExtendedList()  {
         HolyDaysList holidays=new HolyDaysList(context,month,y,false,eritrean,tigraian);
         ArrayList<Integer> dates=holidays.dates;
         ArrayList<String> events=holidays.names;
@@ -38,7 +38,7 @@ public class HolidaysOfTheDay {
         }
         return list;
     }
-    ArrayList<String> getShortList(){
+    ArrayList<String> getShortList()  {
         HolyDaysList holidays=new HolyDaysList(context,month,y,false,eritrean,tigraian);
         ArrayList<Integer> dates=holidays.dates;
         ArrayList<String> events=holidays.names;

@@ -14,10 +14,8 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.Holder> {
     boolean isCurrentMonth,show_gregorian;
     int WEEKEND=1;
     int WEEKDAY=2;
-    //private final int Neon,red,super_light_gray;
     DateItem[] dateItems;
     int month,current_date;
-   // Context context;
 
     GridAdapter(DateItem[] dateItems,int month,int current_date, boolean isCurrentMonth,boolean show_gregorian){
         this.isCurrentMonth=isCurrentMonth;
@@ -46,7 +44,6 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.Holder> {
         if (show_gregorian){
             holder.big.setText(new SpannedStrings(date,day.getGregorian_date()).getString());
         }else {
-            //holder.big.setGravity(Gravity.CENTER);
             holder.big.setText(string_geez_date);
         }
         // dates of this month
@@ -72,7 +69,6 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.Holder> {
             // may be do it after a while may be 1 sec..
             if (is_holy_day){
                 holder.big.setTextColor(holder.red);
-                //markViews(holder.big,red);
             }
             // date today
             if (is_today){

@@ -1,8 +1,5 @@
 package com.tgk.Elet;
 
-import org.joda.time.DateTime;
-import org.joda.time.chrono.EthiopicChronology;
-import org.joda.time.chrono.GregorianChronology;
 
 import java.util.ArrayList;
 
@@ -62,7 +59,7 @@ class CalendarMonth{
     MonthItem monthItem;
     ArrayList<Integer> holidays;
     boolean eritrean,tigraian,gregorian;
-    CalendarMonth(int month_index,int span,boolean eritrean,boolean tigraian,boolean gregorian){
+    CalendarMonth(int month_index,int span,boolean eritrean,boolean tigraian,boolean gregorian)  {
         this.eritrean=eritrean;
         this.tigraian=tigraian;
         this.gregorian=gregorian;
@@ -90,7 +87,7 @@ class DateParser {
     DateItem[] month_table = new DateItem[42];
     boolean eritrean,tigraian,gregorian;
     // may be pass just the index and get year and m from there.
-    DateParser(int y,int m,boolean eritrean,boolean tigraian,boolean gregorian){
+    DateParser(int y,int m,boolean eritrean,boolean tigraian,boolean gregorian)  {
         super();
         this.m=m;
         this.y=y;
@@ -99,31 +96,30 @@ class DateParser {
         this.gregorian=gregorian;
         populateMonth();
     }
-    void populateMonth(){
-        EthiopicChronology chronology;
-        chronology=EthiopicChronology.getInstance();
-        GregorianChronology gregorianChronology=GregorianChronology.getInstance();
-        DateTime dateTime = new DateTime(y, m, 1, 0, 0, 0,chronology);
-        int first_day=dateTime.getDayOfWeek()%7;
-        dateTime= dateTime.minusDays(first_day);
+    void populateMonth()  {
+
+        GeezDate dateTime=GeezDate.of(y,m,1);
+        int first_day= dateTime.dayOfTheWeek();//dateTime.getDayOfWeek()%7;
+        dateTime= dateTime.plusDays(-first_day);
         int i=0;
         while (i<42){
-            DateTime date=dateTime.plusDays(i);
             int d2=0;
             if (gregorian){
-                DateTime dtGregorian = date.withChronology(gregorianChronology);
-                d2=dtGregorian.getDayOfMonth();
+                DateLocal gtGre = dateTime.to();
+                d2=gtGre.dayOfMonth;
             }
-            boolean over_flow=date.getMonthOfYear()!=m;
-            int d=date.getDayOfMonth();
+            boolean over_flow=dateTime.getMonth()!=m;
+            int d=dateTime.getDayOfMonth();
             boolean isHoliday=HolidaysInTheMonth().contains(d);
             this.month_table[i]=new DateItem(d,d2,over_flow,isHoliday);
+            dateTime=dateTime.plusDays(1);
             i++;
         }
     }
 
     ArrayList<Integer> HolidaysInTheMonth(){
-        return new ArrayList<>(HolyDays.updatedHolyDates(m, y, new ConvertDate(1,m,y,"Geez").ferenji_year,eritrean,tigraian));
+        int gregYear= GeezDate.of(y,m,1).to().year;
+        return new ArrayList<>(HolyDays.updatedHolyDates(m, y, gregYear,eritrean,tigraian));
     }
 
     public DateItem[] getMonth_table() {

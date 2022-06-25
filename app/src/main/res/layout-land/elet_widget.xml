@@ -78,8 +78,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:padding="8dp"
-        
-        android:text="the text"
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/abyssinica"
         android:textColor="?attr/appWidgetTextColor"/>

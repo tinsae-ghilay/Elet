@@ -24,7 +24,7 @@ public class HolyDaysList {
     ArrayList<String> holy_dates,holiday_names,names;
     ArrayList<Integer> dates;
     boolean eritrean,tigraian,isForCalendar;
-    HolyDaysList(Context context, int gm,int gy,boolean isForCalendar,boolean eritrean,boolean tigraian){
+    HolyDaysList(Context context, int gm,int gy,boolean isForCalendar,boolean eritrean,boolean tigraian)  {
         super();
         this.context=context;
         this.no_holidays=context.getResources().getStringArray(R.array.monthsList)[gm-1]+" "+context.getResources().getString(R.string.no_holidays);
@@ -70,12 +70,15 @@ public class HolyDaysList {
             }
         }
     }
-    void setGregorianYear(){
+    void setGregorianYear()  {
+        GeezDate date;
         if (!isForCalendar){
-            this.y=new CurrentDate().getCurrentGregorianYear();
+            date=GeezDate.now();
         }else {
-            this.y=new ConvertDate(1, gm, gy,"geez").ferenji_year;
+            date=GeezDate.of(gy,gm,1);
         }
+        DateLocal dateLocal= date.to();
+        this.y=dateLocal.year;
     }
     static boolean[] setBooleans(Context context){
         SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(context);

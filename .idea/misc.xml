@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.2847222222222222" />
+        <entry key="app/src/main/res/drawable/calendar.xml" value="0.171" />
+        <entry key="app/src/main/res/drawable/convert.xml" value="0.171" />
+        <entry key="app/src/main/res/drawable/switch_calendar.xml" value="0.171" />
+        <entry key="app/src/main/res/drawable/underline.xml" value="0.171" />
+        <entry key="app/src/main/res/drawable/widget_bg.xml" value="0.171" />
+        <entry key="app/src/main/res/drawable/widget_signature.xml" value="0.171" />
+        <entry key="app/src/main/res/layout-land/elet_small.xml" value="0.31981981981981983" />
+        <entry key="app/src/main/res/layout-land/elet_widget.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/layout/day.xml" value="0.215625" />
+        <entry key="app/src/main/res/layout/elet_widget.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.13854166666666667" />
+        <entry key="app/src/main/res/layout/fragment_converter.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/grid_item.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/month_item.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/picker_layout.xml" value="0.22864583333333333" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="androidx.annotation.NonNull" />

@@ -25,16 +25,20 @@ public class EletSmall extends AppWidgetProvider {
     final  static String UPDATE="android.appwidget.action.APPWIDGET_UPDATE";
     final static  String BOOTED="android.intent.action.BOOT_COMPLETED";
     int FLAG;
-    CurrentDate currentDate;
+    GeezDate geezDate;
+    DateLocal dateLocal;
+    //CurrentDate currentDate;
     Calendar calendar;
     RemoteViews views;
 
     void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
+                                int appWidgetId){
             // establish the current date
-            currentDate=new CurrentDate();// Calendar.getInstance()
+            //currentDate=new CurrentDate();// Calendar.getInstance()
+        geezDate=GeezDate.now();
+        dateLocal=geezDate.to();
 
-            int today=currentDate.getTodayInGeez();//(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
+        int today= geezDate.dayOfTheWeek();//(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
 
         // Construct the RemoteViews object
         views = new RemoteViews(context.getPackageName(), R.layout.elet_small);
@@ -43,14 +47,14 @@ public class EletSmall extends AppWidgetProvider {
         PendingIntent pendingIntent=PendingIntent.getActivity(context,1,intent,FLAG);
         views.setOnClickPendingIntent(R.id.small_widget,pendingIntent);
         views.setTextViewText(R.id.week_day,context.getResources().getStringArray(R.array.week_days)[today]);
-        views.setTextViewText(R.id.small_geez,currentDate.getCurrentGeezDate()
+        views.setTextViewText(R.id.small_geez,geezDate.dayOfMonth
                 +" "+context.getResources()
-                .getStringArray(R.array.monthsList)[currentDate.getCurrentGeezMonth()-1]+", "+currentDate.getCurrentGeezYear());
+                .getStringArray(R.array.monthsList)[geezDate.month-1]+", "+geezDate.year);
         views.setTextViewText(R.id.small_gregorian
-                ,currentDate.getCurrentGregorianDate()
-                        +" "+context.getResources().getStringArray(R.array.months)[currentDate.getCurrentGregorianMonth()-1]+", "+currentDate.getCurrentGregorianYear());
+                ,dateLocal.dayOfMonth
+                        +" "+context.getResources().getStringArray(R.array.months)[dateLocal.month-1]+", "+dateLocal.year);
         views.setTextViewText(R.id.day_holiday,
-                context.getResources().getStringArray(R.array.daily_events)[currentDate.getCurrentGeezDate()]);
+                context.getResources().getStringArray(R.array.daily_events)[geezDate.dayOfMonth]);
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
@@ -119,7 +123,7 @@ public class EletSmall extends AppWidgetProvider {
             //if Locale isn't set here. it resets to default.
             setLocale(context);
             // establish the current date
-            currentDate=new CurrentDate();
+            //geezDate=GeezDate.now();
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(getComponentName(context));
             for (int id : ids) {

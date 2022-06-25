@@ -16,8 +16,6 @@
         android:paddingEnd="8dp"
         android:paddingBottom="2dp"
         android:layout_marginBottom="-6dp"
-
-        android:text="the text"
         android:fontFamily="@font/abyssinica"
         android:textColor="@color/red_ish"/>
     <TextClock
@@ -71,27 +69,32 @@
    </RelativeLayout>
     <!-- divider and months to here -->
 
-    <TextView
-        android:id="@+id/geez_date"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/days"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="?attr/appWidgetTextColor"
-        android:fontFamily="@font/abyssinica" />
+        android:background="@drawable/widget_signature"
+        android:backgroundTintMode="screen"
+        android:layout_below="@+id/days">
+        <TextView
+            android:id="@+id/geez_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="?attr/appWidgetTextColor"
+            android:fontFamily="@font/abyssinica" />
 
-    <TextView
-        android:id="@+id/gregorian_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/days"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/abyssinica"
-        android:textColor="?attr/appWidgetTextColor"/>
+        <TextView
+            android:id="@+id/gregorian_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/abyssinica"
+            android:textColor="?attr/appWidgetTextColor"/>
+    </RelativeLayout>
 </RelativeLayout>

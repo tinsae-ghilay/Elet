@@ -2,6 +2,7 @@ package com.tgk.Elet;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,8 +47,8 @@ public class BahreHasabFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        CurrentDate today=new CurrentDate();
-        gy=today.getCurrentGeezYear();
+        GeezDate today=GeezDate.now();
+        gy=today.getYear();
         //--------------------------------------
         days = getResources().getStringArray(R.array.holy_days);
         listView= HasabBinding.list;
@@ -66,7 +67,9 @@ public class BahreHasabFragment extends Fragment {
             return false;
         });
         MaterialButton calculate= HasabBinding.calculate;
-        calculate.setOnClickListener(v -> calculateBahreHasab());
+        calculate.setOnClickListener(v ->
+            calculateBahreHasab()
+        );
     }
 
     @Override
@@ -80,14 +83,15 @@ public class BahreHasabFragment extends Fragment {
         super.onResume();
     }
 
-    void calculateBahreHasab(){
+    void calculateBahreHasab()  {
         String input= Objects.requireNonNull(text.getText()).toString().trim();
         if (!TextUtils.isEmpty(input)) {
             int year;
             try {
                 year=Integer.parseInt(String.valueOf(text.getText()));
             }catch (Exception exception){
-                year=new CurrentDate().getCurrentGeezYear();
+                Log.d("Bahre hasab calculation", text.getText().toString()+" received"+exception.getMessage());
+                year=GeezDate.now().getYear();
                 Toast.makeText(requireContext(),"Geez year must only contain numbers",Toast.LENGTH_LONG).show();
             }
             BahreHasab h=new BahreHasab(year);
@@ -98,6 +102,7 @@ public class BahreHasabFragment extends Fragment {
                 imm = (InputMethodManager) requireContext().getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(text.getWindowToken(), 0);
             } catch (Exception e) {
+                Log.d("Trying to hide keyboard",e.getMessage());
                 //no need to catch.
             }
         }

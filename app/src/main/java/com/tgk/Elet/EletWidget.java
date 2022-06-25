@@ -27,7 +27,9 @@ public class EletWidget extends AppWidgetProvider {
     final  static String UPDATE="android.appwidget.action.APPWIDGET_UPDATE";
     final static  String BOOTED="android.intent.action.BOOT_COMPLETED";
     int FLAG;
-    CurrentDate currentDate;
+    //CurrentDate currentDate;
+    GeezDate geezDate;
+    DateLocal dateLocal;
     Calendar calendar;
     RemoteViews views;
     //-------------------------------
@@ -38,16 +40,18 @@ public class EletWidget extends AppWidgetProvider {
     static String[] geezMonths = {"መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ", "ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰነ", "ሓምለ", "ነሓሰ", "ጳጉሜን"};
 
     void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
+                                int appWidgetId){
         // establish the current date
-        currentDate=new CurrentDate();// Calendar.getInstance()
+        //currentDate=new CurrentDate();// Calendar.getInstance()
+        geezDate=GeezDate.now();
+        dateLocal=geezDate.to();
 
-        int today=currentDate.getTodayInGeez();//(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
+        int today=geezDate.dayOfTheWeek();//currentDate.getTodayInGeez();//(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
         // Construct the RemoteViews object
         boolean[] booleans=setBooleans(context);
         boolean eritrean=booleans[0];
         boolean tigraian=booleans[1];
-        ArrayList<String> holidayToday=new HolidaysOfTheDay(context, currentDate.getCurrentGeezDate(), currentDate.getCurrentGeezMonth(), currentDate.getCurrentGeezYear(),eritrean,tigraian)
+        ArrayList<String> holidayToday=new HolidaysOfTheDay(context, geezDate.dayOfMonth, geezDate.month, geezDate.year,eritrean,tigraian)
                 .getShortList();
         views = new RemoteViews(context.getPackageName(), R.layout.elet_widget);
         // Pending intent to open app if user clicks on Widget.
@@ -68,14 +72,14 @@ public class EletWidget extends AppWidgetProvider {
             views.setViewVisibility(R.id.holiday_today, View.INVISIBLE);
             views.setTextViewText(R.id.holiday_today,"");
         }
-        views.setTextViewText(R.id.geez_date, currentDate.getCurrentGeezDate()
-                +"  "+geezMonths[currentDate.getCurrentGeezMonth()-1]+",  "+ currentDate.getCurrentGeezYear());
+        views.setTextViewText(R.id.geez_date, geezDate.dayOfMonth
+                +"  "+geezMonths[geezDate.month-1]+",  "+ geezDate.year);
         //views.setTextViewText(R.id.week_day_geez,week_geez[today]);
         views.setTextViewText(R.id.day_geez,week_geez[today]);
         views.setTextViewText(R.id.day_latin,week_latin[today]);
         //views.setTextViewText(R.id.week_day_latin,week_latin[today]);
-        views.setTextViewText(R.id.gregorian_date, currentDate.getCurrentGregorianDate()
-                +"  "+latinMonths[currentDate.getCurrentGregorianMonth()-1]+",  "+ currentDate.getCurrentGregorianYear());
+        views.setTextViewText(R.id.gregorian_date, dateLocal.dayOfMonth
+                +"  "+latinMonths[dateLocal.month-1]+",  "+ dateLocal.year);
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -86,7 +90,11 @@ public class EletWidget extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId);
+            try {
+                updateAppWidget(context, appWidgetManager, appWidgetId);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         //Log.d("WIDGET", "Updated successfully at *****************************"+Calendar.getInstance().getTime());
         //Log.d("Time now is ",currentDate.getTimeNow());
@@ -157,11 +165,20 @@ public class EletWidget extends AppWidgetProvider {
         //Receive update intent to make it update every day around midnight
         if ((intent.getAction().equals(UPDATE))||(intent.getAction().equals(BOOTED))){
             // establish the current date
-            currentDate=new CurrentDate();
+            //TODO check if date needs to be initiated
+            /*try {
+                currentDate=new CurrentDate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(getComponentName(context));
             for (int id : ids) {
-                updateAppWidget(context, manager, id);
+                try {
+                    updateAppWidget(context, manager, id);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             //Log.d("Update", "Executed at"+currentDate.getTimeNow());
 

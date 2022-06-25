@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,10 +14,9 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     int d,m,y,span;
     boolean eritrean,tigraian,show_gregorian;
-    CalendarMonth[] calendarMonths;
 
 
-    RecyclerAdapter(int span,boolean eritrean,boolean tigraian,boolean show_gregorian) {
+    RecyclerAdapter(int span,boolean eritrean,boolean tigraian,boolean show_gregorian)  {
 
         super();
         getDate();
@@ -26,11 +26,11 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
         this.show_gregorian=show_gregorian;
     }
 
-    private void getDate() {
-        CurrentDate date=new CurrentDate();
-        this.y = date.getCurrentGeezYear();
-        this.m = date.getCurrentGeezMonth();
-        this.d = date.getCurrentGeezDate();
+    private void getDate()  {
+        GeezDate date=GeezDate.now();
+        this.y = date.getYear();
+        this.m = date.getMonth();
+        this.d = date.getDayOfMonth();
     }
 
     @NonNull
@@ -43,14 +43,23 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        long start=System.currentTimeMillis();
-        CalendarMonth calendarMonth=new CalendarMonth(i,span,eritrean,tigraian,show_gregorian);
-        MonthItem monthItem= calendarMonth.getMonthItem();
-        DateItem[] dates= monthItem.getDates();
+        CalendarMonth calendarMonth;
+        MonthItem monthItem;
+        DateItem[] dates= null;
         //Month and year of displayed  table.
-        int month=monthItem.getMonth();
-        int year=monthItem.getYear();
-        boolean isCurrentMonth=(month==m&&year==y);
+        int month = 0;
+        int year;
+        boolean isCurrentMonth = false;
+        try {
+            calendarMonth = new CalendarMonth(i,span,eritrean,tigraian,show_gregorian);
+            monthItem = calendarMonth.getMonthItem();
+            dates= monthItem.getDates();
+            month=monthItem.getMonth();
+            year=monthItem.getYear();
+            isCurrentMonth=(month==m&&year==y);
+        } catch (Exception ignored) {
+
+        }
         //adapter.
         if (viewHolder.adapter!=null){
             viewHolder.adapter.changeData(dates,month,isCurrentMonth);
@@ -58,14 +67,10 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
             viewHolder.adapter=new GridAdapter(dates,month,d, isCurrentMonth,show_gregorian);
         }
         viewHolder.grid.setAdapter(viewHolder.adapter);
-        long end=System.currentTimeMillis();
-        long result=end-start;
-        Log.d(" Time it took = "," => "+result);
+        //long end=System.currentTimeMillis();
+        //long result=end-start;
+        //Log.d(" Time it took = "," => "+result);
 
-    }
-
-    public void setCalendarMonths(CalendarMonth[] calendarMonths) {
-        this.calendarMonths = calendarMonths;
     }
 
     @Override
@@ -81,7 +86,6 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
         RecyclerView grid;
         RecyclerView.LayoutManager layoutManager;
         GridAdapter adapter;
-        //CalendarView calendarView;
         ViewHolder(View itemView) {
             super(itemView);
             layoutManager=new GridLayoutManager(itemView.getContext(),7){

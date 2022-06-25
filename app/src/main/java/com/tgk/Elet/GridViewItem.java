@@ -3,14 +3,11 @@ package com.tgk.Elet;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.util.AttributeSet;
 
 public class GridViewItem extends androidx.appcompat.widget.AppCompatTextView {
-    //Canvas canvas = new Canvas();
+
     Paint paint = new Paint();
-    //Rect rect=new Rect();
 
     public GridViewItem(Context context) {
         super(context);
@@ -35,19 +32,12 @@ public class GridViewItem extends androidx.appcompat.widget.AppCompatTextView {
         setMeasuredDimension(widthMeasureSpec, height);
     }
 
-   /*private void drawRectangleTextBorder(Canvas canvas, Paint paint) {
-        Rect rectToDraw = new Rect(1/2, 30, 1/2, 1/2);
-        canvas.drawRect(rectToDraw, paint);
-    }*/
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
 
-        //drawRectangleTextBorder(canvas, paint);
-        //canvas.drawRect(0, 0, getWidth(), getHeight() * 0.01f * 30, paint);
-        //canvas.drawRect(0, measuredHeight * 0.01f * topHeight, measuredWidth, measuredHeight, bottomPaint);
+        // draw border for each cell
+        canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
 
     }
 

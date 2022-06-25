@@ -17,25 +17,27 @@ public class myDatePicker extends FrameLayout {
     String[] months;
     Context context;
     int d,m,y,YEAR;
-    CurrentDate date=new CurrentDate();
+    GeezDate date = GeezDate.now();
+    DateLocal dateLocal=DateLocal.now();
     private OnDateChangedListener dateListener;
     boolean set_selector_to_geez;
 
-    public myDatePicker(@NonNull Context context) {
+    public myDatePicker(@NonNull Context context)  {
         super(context);
         this.context=context;
         initView(context);
     }
 
-    public myDatePicker(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public myDatePicker(@NonNull Context context, @Nullable AttributeSet attrs)  {
         super(context, attrs);
         this.context=context;
         initView(context);
     }
 
-    public myDatePicker(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public myDatePicker(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr)  {
         super(context, attrs, defStyleAttr);
         this.context=context;
+        initView(context);
     }
     private void initView(Context context) {
         View.inflate(context, R.layout.picker_layout, this);
@@ -48,9 +50,9 @@ public class myDatePicker extends FrameLayout {
     void setViews(){
         // gregorian.
         setMonthList();
-        this.d=date.getCurrentGregorianDate();
-        this.m=date.getCurrentGregorianMonth();
-        this.y=date.getCurrentGregorianYear();
+        this.d=dateLocal.dayOfMonth;
+        this.m=dateLocal.month;
+        this.y=dateLocal.year;
         this.YEAR=y;
         // initiate Number Pickers
         // Date Picker
@@ -223,9 +225,9 @@ public class myDatePicker extends FrameLayout {
     void resetWheels(){
         setMonthList();
         if (set_selector_to_geez){
-            setDates( date.getCurrentGeezDate(), date.getCurrentGeezMonth(), date.getCurrentGeezYear());
+            setDates( date.dayOfMonth, date.month, date.year);
         }else{
-            setDates( date.getCurrentGregorianDate(), date.getCurrentGregorianMonth(), date.getCurrentGregorianYear() );
+            setDates( dateLocal.dayOfMonth, dateLocal.month, dateLocal.year );
         }
         initDatePicker();
         initMonthPicker();

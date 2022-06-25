@@ -1,15 +1,21 @@
-/*
- * takes an index which will be divided by 13(months in a geez calendar year)
- * reminder is the month index (i%13)
- * dividend is the year difference (i/13)
- * */
-package com.tgk.Elet;
 
+package com.tgk.Elet;
+/**
+ * takes an index of a recyclerView as int and
+ * Span of months the calendar has to show from
+ * and calculates the year and month of displayed month in recyclerView
+ * @author Tinsae ghilay
+ * */
 public class ScrollWatcher {
     int mid;
     int gy,position,mIndex,yStand;
-    ScrollWatcher(int position,int span){
-        this.gy=new CurrentDate().getCurrentGeezYear();
+
+    /**
+     * @param position index of recyclerView
+     * @param span amount of months calendar has to show
+     */
+    ScrollWatcher(int position,int span)  {
+        this.gy=GeezDate.now().getYear();
         this.position=position;
         this.mIndex=position%13;
         this.yStand=position/13;
@@ -24,9 +30,5 @@ public class ScrollWatcher {
         int dif=yStand-mid;
         return gy+dif;
     }
-    // calendar months gregorian year.
-    /*int getGregorianYear(){
-        return new ConvertDate(1,mIndex+1,getGeezYear(),"Geez").ferenji_year;
-    }*/
 }
 

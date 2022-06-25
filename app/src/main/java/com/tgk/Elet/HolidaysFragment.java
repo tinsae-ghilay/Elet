@@ -53,9 +53,12 @@ public class HolidaysFragment extends Fragment {
         annual.setOnClickListener(this::switchList);
         daily.setOnClickListener(this::switchList);
         list= HolidayBinding.holidaysList;
-        CurrentDate today=new CurrentDate();
+        /*CurrentDate today = new CurrentDate();
         gy=today.getCurrentGeezYear();
-        gm=today.getCurrentGeezMonth();
+        gm=today.getCurrentGeezMonth();*/
+        GeezDate today=GeezDate.now();
+        gy= today.getYear();
+        gm= today.getMonth();
         months=getResources().getStringArray(R.array.monthsList);
         gms=getResources().getStringArray(R.array.monthsList)[gm-1];
         gap=", ";
@@ -71,7 +74,7 @@ public class HolidaysFragment extends Fragment {
         HolidayBinding = null;
     }
     // switch lists
-    public void switchList(View view) {
+    public void switchList(View view)  {
         list.setAdapter(null);
         if (daily.equals(view)) {
             setDaily();
@@ -81,7 +84,7 @@ public class HolidaysFragment extends Fragment {
         list.setAdapter(adapter);
     }
     // populate annual holiday event names
-    ArrayList<String> annualHolidays(){
+    ArrayList<String> annualHolidays()  {
         ArrayList<String> days=new ArrayList<>();
         for (int i=0;i<months.length;i++){
             ArrayList<String> array=new HolyDaysList(requireActivity(),i+1,gy,false,eritrean,tigraian).holiday_names;//HolyDays.updatedHolidays(this,months.get(i),y);
@@ -92,7 +95,7 @@ public class HolidaysFragment extends Fragment {
         return days;
     }
     // populate annual holiday dates.
-    ArrayList<String> annualHolyDates(){
+    ArrayList<String> annualHolyDates()  {
         ArrayList<String> days=new ArrayList<>();
         for (int i=0;i<13;i++){
             ArrayList<String> list=new HolyDaysList(requireActivity(),i+1,gy,false,eritrean,tigraian).holy_dates;
@@ -140,7 +143,7 @@ public class HolidaysFragment extends Fragment {
         adapter=new listAdapter(getActivity(),oneThroughThirty(),dailyEvents(),false);
     }
     // set daily holidays
-    void setAnnual(){
+    void setAnnual()  {
         annual.setBackgroundResource(R.color.Neon);
         annual.setTextColor(Color.WHITE);
         daily.setBackgroundColor(Color.WHITE);

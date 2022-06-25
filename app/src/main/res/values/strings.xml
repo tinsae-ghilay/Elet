@@ -161,6 +161,4 @@
     <string name="show_gregorian">Along with Gregorian dates</string>
     <string name="widget_enable">Enable widget</string>
     <string name="widget_text">Please Rate, Like, share us on…</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
 </resources>

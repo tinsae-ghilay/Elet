@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // date current date.
-    private void setDate() {
-        CurrentDate today=new CurrentDate();
-        gy=today.getCurrentGeezYear();
-        gd=today.getCurrentGeezDate();
-        gm=today.getCurrentGeezMonth();
+    private void setDate()  {
+        GeezDate today=GeezDate.now();
+        gy=today.getYear();
+        gd=today.getDayOfMonth();
+        gm=today.getMonth();
     }
 
     // unified Toast.

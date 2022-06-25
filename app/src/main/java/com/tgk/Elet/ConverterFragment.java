@@ -31,11 +31,14 @@ public class ConverterFragment extends Fragment {
     int gd,gy,gm;
     // Month and weekdays
     String[] days;
+    String[] months;
     String convert_to;
     myDatePicker picker;
-    TextView result,from_geez,from_gregorian;
+    TextView result,from_geez,from_gregorian,dayOfWeek;
     ListView holy_days_list;
-    CurrentDate date;
+    //CurrentDate date;
+    GeezDate date;
+    DateLocal dateLocal;
     boolean eritrean,tigraian;
     AdView adView;
 
@@ -50,15 +53,17 @@ public class ConverterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        date=new CurrentDate();
+
+        date=GeezDate.now();
+        dateLocal=date.to();
         boolean[] booleans=setBooleans(requireActivity());
         eritrean=booleans[0];
         tigraian=booleans[1];
         //-------------------------------
         // Dates start with Current date in Gregorian
-        d=date.getCurrentGregorianDate();
-        m=date.getCurrentGregorianMonth();
-        y=date.getCurrentGregorianYear();
+        d=dateLocal.dayOfMonth;
+        m= dateLocal.month;
+        y= dateLocal.year;
 
         days=requireActivity().getResources().getStringArray(R.array.week_days);
         picker= ConverterBinding.datePicker;
@@ -78,14 +83,27 @@ public class ConverterFragment extends Fragment {
         from_gregorian.setOnClickListener(this::switchTarget);
 
         // setting geez dates.
-        gy=date.getCurrentGeezYear();
-        gm=date.getCurrentGeezMonth();
-        gd=date.getCurrentGeezDate();
+        gy=date.year;
+        gm=date.month;
+        gd=date.dayOfMonth;
         initGregorian();
         //setFrom_gregorian();
         result= ConverterBinding.result;
+        dayOfWeek=ConverterBinding.dayOfWeek;
         Button convert= ConverterBinding.convert;
         convert.setOnClickListener(this::OnConvertClick);
+        /*Thread adThread = new Thread(() -> {
+            try  {
+                // Your network activity
+                adView = ConverterBinding.adView;
+                AdRequest adRequest = new AdRequest.Builder().build();
+                adView.loadAd(adRequest);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        adThread.start();*/
 
         // adView
         /*
@@ -106,23 +124,33 @@ public class ConverterFragment extends Fragment {
     }
     // convert date to and fro when convert button is clicked
     private String convertDate(){
-        return new ConvertDate(d,m,y,convert_to).convertDate(days);
+        if (convert_to.equals("geez")){
+            months=requireContext().getResources().getStringArray(R.array.monthsList);
+            date=GeezDate.from(y,m,d);
+            return date.dayOfMonth+" "+months[date.month-1]+", "+ date.year;
+        }else{
+            months=requireContext().getResources().getStringArray(R.array.months);
+            date=GeezDate.of(y,m,d);
+            dateLocal=date.to();
+            return dateLocal.dayOfMonth+" "+months[dateLocal.month-1]+", "+ dateLocal.year;
+        }
+
     }
     // handling convert button click.
-    public void OnConvertClick(View view) {
+    public void OnConvertClick(View view)  {
         result.setText(convertDate());
-        ConvertDate convertDate=new ConvertDate(d,m,y,convert_to);
-        ArrayList<String> holidaysOfTheDay=new HolidaysOfTheDay(requireActivity(),convertDate.geez_date,
-                convertDate.geez_month,convertDate.geez_year,eritrean,tigraian).getExtendedList();
+        dayOfWeek.setText(days[date.dayOfTheWeek()]);
+        ArrayList<String> holidaysOfTheDay=new HolidaysOfTheDay(requireActivity(),date.dayOfMonth,
+                date.month, date.year, eritrean,tigraian).getExtendedList();
         String[] array = holidaysOfTheDay.toArray(new String[0]);
         holy_days_list.setAdapter(new SingleItemAdapter(array,requireActivity()));
     }
     // switch to and fro for conversion targets.
     public void switchTarget(View view) {
-        if (from_geez.equals(view)&&!convert_to.equalsIgnoreCase("geez")) {
+        if (from_geez.equals(view)&&!convert_to.equalsIgnoreCase("ferenji")) {
             setFrom_geez();
 
-        }else if (from_gregorian.equals(view)&&!convert_to.equalsIgnoreCase("ferenji")){
+        }else if (from_gregorian.equals(view)&&!convert_to.equalsIgnoreCase("geez")){
             setFrom_gregorian();
         }
     }
@@ -140,15 +168,15 @@ public class ConverterFragment extends Fragment {
     }
     // initialise required views for gregorian to geez
     void initGregorian(){
-        convert_to = "ferenji";
+        convert_to = "geez";
         from_gregorian.setBackgroundResource(R.color.Neon);
         from_geez.setBackgroundColor(Color.WHITE);
         from_gregorian.setTextColor(Color.WHITE);
         from_geez.setTextColor(Color.DKGRAY);
         //-------------------------------
-        d=date.getCurrentGregorianDate();
-        m=date.getCurrentGregorianMonth();
-        y=date.getCurrentGregorianYear();
+        d= dateLocal.dayOfMonth;
+        m= dateLocal.month;
+        y= dateLocal.year;
     }
     // initialise required views for geez to gregorian
     void intGeez(){
@@ -156,10 +184,10 @@ public class ConverterFragment extends Fragment {
         from_gregorian.setBackgroundColor(Color.WHITE);
         from_geez.setTextColor(Color.WHITE);
         from_gregorian.setTextColor(Color.DKGRAY);
-        convert_to = "geez";
+        convert_to = "ferenji";
         //--------------------------
-        d=date.getCurrentGeezDate();
-        m=date.getCurrentGeezMonth();
-        y=date.getCurrentGeezYear();
+        d=date.dayOfMonth;
+        m=date.month;
+        y=date.year;
     }
 }

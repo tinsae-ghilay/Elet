@@ -67,7 +67,11 @@ public class CalendarFragment extends Fragment {
         daily_events=getResources().getStringArray(R.array.daily_events);
         monthsList = getResources().getStringArray(R.array.monthsList);
         // declare the date
-        declareDate();
+        try {
+            declareDate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // Inflating Views for displaying days of the week.
         setWeekDays();
         // back and forth navigation buttons for calendar
@@ -75,7 +79,11 @@ public class CalendarFragment extends Fragment {
         //title for the calendar table. i.e month and year
         initCalendarTitle();
         //setting up RecyclerView. its LayOut manager and adapter
-        initRecyclerView();
+        try {
+            initRecyclerView();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // display holidays of this month.
         h_list=CalendarBinding.eventsList;
         //displayList(getActivity(),gm,gy);
@@ -86,22 +94,28 @@ public class CalendarFragment extends Fragment {
 
     private void initCalendarTitle() {
         calendar_title=CalendarBinding.calendarTitle;
-        calendar_title.setOnClickListener(this::onReturnClick);
+        calendar_title.setOnClickListener(view -> {
+            try {
+                onReturnClick(view);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
         TextView event_day=CalendarBinding.today;
         String event=gd+" - "+daily_events[gd];
         event_day.setText(event);
         setCalendarTitle(gy,gm);
     }
 
-    private void declareDate() {
-        CurrentDate today=new CurrentDate();
-        gd=today.getCurrentGeezDate();
-        gm=today.getCurrentGeezMonth();
-        gy=today.getCurrentGeezYear();
+    private void declareDate()  {
+        GeezDate today=GeezDate.now();
+        gd=today.getDayOfMonth();
+        gm=today.getMonth();
+        gy=today.getYear();
         SCREEN_WIDTH=getSCREEN_WIDTH();
     }
 
-    private void initRecyclerView() {
+    private void initRecyclerView(){
         recyclerView = CalendarBinding.recyclerView;
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemViewCacheSize(20);
@@ -134,7 +148,8 @@ public class CalendarFragment extends Fragment {
                 detached = recyclerView.getChildLayoutPosition(view);
                 boolean stayed= attached == detached;
                 if (!stayed){
-                    ScrollWatcher watcher=new ScrollWatcher(attached,span);
+                    ScrollWatcher watcher;
+                    watcher = new ScrollWatcher(attached,span);
                     gm= watcher.getMonth();
                     gy=watcher.getGeezYear();
                     setCalendarTitle(gy,gm);
@@ -170,7 +185,7 @@ public class CalendarFragment extends Fragment {
         recyclerView.smoothScrollBy(-(SCREEN_WIDTH), 0);
     }
     // navigate to start
-    public void onReturnClick(View view){
+    public void onReturnClick(View view)  {
         resetCalendar();
     }
     // width of screen used for scrolling on navigation buttons click.
@@ -180,13 +195,13 @@ public class CalendarFragment extends Fragment {
         return displayMetrics.widthPixels;
     }
     // revert to current month view
-    private void resetCalendar(){
+    private void resetCalendar()  {
         recyclerView.scrollToPosition(first_item);
         ScrollWatcher watcher = new ScrollWatcher(first_item,span);
         displayList(requireActivity(), watcher.getMonth(), watcher.getGeezYear());
     }
     // Holidays list to be displayed under calendar table
-    void displayList(Context context,int gm, int gy){
+    void displayList(Context context,int gm, int gy)  {
         HolyDaysList holyDaysList=new HolyDaysList(context,gm,gy,true,eritrean,tigraian);
         if (adapter==null){
             adapter=new listAdapter(context,holyDaysList.holy_dates,holyDaysList.holiday_names,true);
@@ -212,7 +227,11 @@ public class CalendarFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        resetCalendar();
+        try {
+            resetCalendar();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     void setWeekDays(){
         String[] week_days=getResources().getStringArray(R.array.week_days);// name of days of the week.
