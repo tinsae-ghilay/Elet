@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-import static android.content.Intent.ACTION_BOOT_COMPLETED;
 import static com.tgk.Elet.HolyDaysList.setBooleans;
 
 public class EletWidget extends AppWidgetProvider {

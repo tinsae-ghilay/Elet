@@ -16,8 +16,6 @@ import androidx.preference.PreferenceManager;
 import java.util.Calendar;
 import java.util.Locale;
 
-import static android.content.Intent.ACTION_BOOT_COMPLETED;
-
 /**
  * Implementation of App Widget functionality.
  */
