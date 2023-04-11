@@ -31,6 +31,9 @@ class WeekDaysView: View {
             dayPaint.textSize = textSize
             invalidate()
         }
+    // if no array for week day names is passed to attributes 
+    // or set in code while instantiating the widget
+    // the default value will be taken.
     var weekDays = arrayOf("ሰን","ሰኑ","ሰሉ","ረቡ","ሓሙ","ዓር","ቀዳ")
         set(value) {
             field = value
