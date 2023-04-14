@@ -84,7 +84,7 @@ public class GeezDate extends BaseDate {
         } else { return jdnToGeezDate(julianDay+(months* 30L));}
     }
 
-    //convert GeezDate to BaseDate
+    //convert GeezDate to LocalDate
     DateLocal toLocalDate(){
         int f = (int) (julianDay + 1401 + (((4 * julianDay + 274277) / 146097) * 3) / 4 - 38);
         int e = 4 * f + 3;
@@ -120,6 +120,7 @@ public class GeezDate extends BaseDate {
      *  @return GeezDate
      */
     public static GeezDate now(){
+        // TODO("consider accounting for offsetting from UTC")
         long  dayOfEpoch =System.currentTimeMillis()/(EPOCH_DAY);
         long jdn=dayOfEpoch+ JDN_AT_EPOCH;
         return jdnToGeezDate(jdn);
