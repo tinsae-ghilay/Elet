@@ -1,8 +1,0 @@
-package com.tgk.Elet.localDate;
-
-public enum DateFormat {
-    SLASHED, SLASH_SPACED, DOTTED,
-    DOT_SPACED, SPACED, WITH_COMMA,
-    SPACED_WITH_COMA, MONTH_NAMED,
-    MONTH_NAMED_ISO, DAY_NAMED, ISO,MONT_OF_YEAR, DAY_OF_MONTH
-}

@@ -4,6 +4,7 @@
     android:viewportHeight="297"
     android:viewportWidth="210"
     android:width="210dp"
+    android:tint="?attr/colorControlNormal"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <path
         android:fillColor="#000000"

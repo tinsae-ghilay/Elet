@@ -1,30 +1,41 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:layout="@layout/fragment_setting"
-        />
+
+    <PreferenceCategory app:title="@string/setting">
+
         <ListPreference
+            app:defaultValue="English"
             app:entries="@array/languages_list"
-            app:entryValues="@array/languages_list"
+            app:entryValues="@array/locales"
             app:key="lang"
-            android:icon="@drawable/locale"
+            app:icon="@drawable/locale"
             app:title="@string/select_lang"
-            app:useSimpleSummaryProvider="true" />
-    <PreferenceCategory
-        android:title="@string/extra">
+            app:useSimpleSummaryProvider="true"
+            app:positiveButtonText="@string/select_lang"
+            app:allowDividerAbove="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/date_options">
+
         <SwitchPreferenceCompat
-            android:icon="@drawable/ic_eritrea"
-            app:key="eritrea"
-            android:title="@string/select_eritrean"/>
+            app:key="eritrean"
+            app:icon="@drawable/ic_eritrea"
+            app:title="@string/select_eritrean" />
+
         <SwitchPreferenceCompat
-            app:key="tigray"
-            android:icon="@drawable/ic_tigray"
-            android:title="@string/select_tigray"/>
+            app:key="tigraian"
+            app:icon="@drawable/ic_tigray"
+            app:title="@string/select_tigray" />
+
         <SwitchPreferenceCompat
             app:key="gregorian"
-            android:icon="@drawable/switch_calendar"
-            android:title="@string/show_gregorian"/>
+            app:icon="@drawable/show_gregorian_dates"
+            app:title="@string/show_gregorian" />
+
     </PreferenceCategory>
-    <Preference
-        android:layout="@layout/setting_buttons"/>
+    <PreferenceCategory>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

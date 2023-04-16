@@ -6,32 +6,44 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.tgk.Elet.CalendarFragment"
+        android:name="com.tgk.elet.ui.calendar.CalendarFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_converter"
+            app:destination="@id/navigation_converter" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_converter"
-        android:name="com.tgk.Elet.ConverterFragment"
+        android:name="com.tgk.elet.ui.converter.ConverterFragment"
         android:label="@string/converter"
         tools:layout="@layout/fragment_converter" >
+        <action
+            android:id="@+id/action_navigation_converter_to_navigation_bahrehasab"
+            app:destination="@id/navigation_bahrehasab" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_bahrehasab"
-        android:name="com.tgk.Elet.BahreHasabFragment"
+        android:name="com.tgk.elet.ui.bahre_hassab.HassabFragment"
         android:label="@string/bahre_hasab"
-        tools:layout="@layout/fragment_bahre_hasab" >
+        tools:layout="@layout/fragment_hassab" >
+        <action
+            android:id="@+id/action_navigation_bahrehasab_to_navigation_holidays"
+            app:destination="@id/navigation_holidays" />
     </fragment>
     <fragment
         android:id="@+id/navigation_holidays"
-        android:name="com.tgk.Elet.HolidaysFragment"
+        android:name="com.tgk.elet.ui.holidays.HolidaysFragment"
         android:label="@string/holidays"
-        tools:layout="@layout/fragment_holidays" />
+        tools:layout="@layout/fragment_holidays" >
+        <action
+            android:id="@+id/action_navigation_holidays_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.tgk.Elet.SettingsFragment"
-        android:label="@string/setting"
-        tools:layout="@layout/fragment_setting" />
+        android:name="com.tgk.elet.SettingsFragment"
+        android:label="@string/setting" />
 </navigation>

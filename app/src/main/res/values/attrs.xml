@@ -3,4 +3,27 @@
         <attr name="appWidgetBackgroundColor" format="color" />
         <attr name="appWidgetTextColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="CalendarViewDelegator">
+        <!-- show gregorian dates or not -->
+        <attr name="showGregorian" format="boolean"/>
+        <!-- color of selected date cell -->
+        <attr name="selectionColor" format="color"/>
+        <!-- color of week end cell -->
+        <attr name="weekEndColor" format="color"/>
+        <!-- color of offset cell -->
+        <attr name="offsetColor" format="color"/>
+        <!-- color of current month date cell -->
+        <attr name="insetColor" format="color"/>
+        <!-- color of current date cell -->
+        <attr name="indicatorColor" format="color"/>
+        <!-- geez date text color -->
+        <attr name="geezTextSize" format="dimension"/>
+        <!-- gregorian date text color -->
+        <attr name="gregorianTextSize" format="dimension"/>
+        <!-- font family -->
+        <attr name="font" format="reference"/>
+        <!-- week days -->
+        <attr name="weekDays" format="reference"/>
+    </declare-styleable>
 </resources>

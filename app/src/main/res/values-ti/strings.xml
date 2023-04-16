@@ -40,7 +40,11 @@
         <item>ዓርቢ</item>
         <item>ቀዳም</item>
     </string-array>
-    <string name="select_lang">ቋንቋ ምረጽ</string>
+    <string name="date_options">ተወሰኽቲ ምርጫታት</string>
+    <string name="yes">እወ</string>
+    <string name="no">አይፋል</string>
+    <string name="reboot_message">"ናይ ቋንቋ ለውጢ ክትግበር እንተኾይኑ፣ ዓውደ አዋርሕ ከምብሓድሽ ክኽፈት አለዎ፣ ሕጂ ክቕየር እንተደአ ደሊኹሞ እወ ክትጥውቑ፣ ደሓን ቀስ ኢሉ ይቀየር ትብሉ እንተኮይንኩም ግን አይፋል ክትመርጹ ብትሕትና ንመክር። "</string>
+    <string name="select_lang">ቋንቋ ምረጽ(ኣፕ ክምብሓድሽ ክኽፈት አለዎ)</string>
     <string name="done">ወድእ</string>
     <string name="restarted">ኣፕ ከም ብሓድሽ ተበራቢሩ ኣሎ።</string>
     <string name="promptExit">ኣፕ ንምዕጻው እንደገና ንድሕሪት ጠውቕ</string>
@@ -67,6 +71,28 @@
         <item>ጰራቅሊጦስ</item>
         <item>ጾመ ሃዋርያት</item>
         <item>ጾመ ድሕነት</item>
+        <item>ሓድሽ ዓመት (ቅዱስ ዮሓንስ)</item>
+        <item>መስቀል</item>
+        <item>ጾመ ነብያት</item>
+        <item>ልደት ፈረንጂ</item>
+        <item>ሓድሽ ዓመት ፈረንጂ</item>
+        <item>ልደት</item>
+        <item>ግዝረት</item>
+        <item>ጥምቀት</item>
+        <item>ቃና ዘ ገሊላ</item>
+        <item>መዓልቲ ሰራሕተኛታት</item>
+        <item>ጾመ ፍልሰታ</item>
+        <item>ደብረ ታቦር</item>
+        <item>ፍልሰታ (ኣሸንዳ / ማርያ )</item>
+        <item>ጾመ ገሃድ</item>
+        <item>ቁስቛም</item>
+        <item>ማርያም ጽዮን</item>
+        <item>ባኣታ ማርያም</item>
+        <item>ኣስተርእዮ</item>
+        <item>ኪዳነ ምሕረት</item>
+        <item>ልደታ</item>
+        <item>ፅንሰታ</item>
+        <item>ሩፋኤል</item>
     </string-array>
     <string name="no_holidays">ዝተፈልጠ ባዓል የብላን</string>
     <string name="holidays_title">ባዓላትን አጽዋማትን</string>
@@ -133,7 +159,7 @@
     <string name="annual">ዓመታዊ ባዓላት</string>
     <string name="calculate">ሕሰብ</string>
     <string name="convert">ቀይር</string>
-    <string name="insert_year_here">ዓመተ ምህረት ብግእዝ ኣእቱ</string>
+    <string name="insert_year_here">ዓመት</string>
     <string name="from_geez">ካብ ግእዝ</string>
     <string name="from_Gregorian">ካብ ፈረንጂ</string>
     <string name="home">ዓ.ኣዋርሕ</string>
@@ -157,4 +183,8 @@
     <string name="show_gregorian">ናይ ፈረጂ ዕለታት ውን ኣርኢ</string>
     <string name="widget_enable" >መስኮት ዕለት ኣኽእል</string>
     <string name="widget_text">ኣብዞም ዝስዕቡ መድረኻት ርኢቶን ሚዛንን ለግሱ/ሳ/ልና</string>
+    <string name="month">month</string>
+    <string name="bahti">"ዝበርቀሉ ማዓልቲ : "</string>
+    <string name="change_year">ዓመት ቀይር</string>
+    <string name="ad">ዓ.ም</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="month">month</string>
+    <string name="bahti">Starts on:</string>
+    <string name="change_year">change year</string>
+</resources>

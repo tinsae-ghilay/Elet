@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/navigation_converter"
-        android:icon="@drawable/convert"
+        android:icon="@drawable/change"
         android:title="@string/converter" />
 
     <item
         android:id="@+id/navigation_bahrehasab"
-        android:icon="@drawable/bahrehasab"
+        android:icon="@drawable/hassab"
         android:title="@string/bahre_hasab" />
     <item
         android:id="@+id/navigation_holidays"
@@ -21,7 +21,7 @@
         android:title="@string/holidays" />
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/locale"
+        android:icon="@drawable/settings"
         android:title="@string/setting" />
 
 </menu>

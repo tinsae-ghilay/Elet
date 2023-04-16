@@ -2,7 +2,11 @@
 <resources>
     <string name="app_name">ዕለት</string>
     <string name="setting">Einstellung</string>
-    <string name="select_lang">Sprache wählen</string>
+    <string name="date_options">Datum Optionen</string>
+    <string name="yes">JA</string>
+    <string name="no">NEIN</string>
+    <string name="reboot_message">Damit die bevorzugte Sprache wirksam wird, muss die App neu gestartet werden. Bitte wählen Sie JA, wenn Sie es jetzt ändern möchten, oder NEIN, wenn Sie es beim nächsten Start lieber ändern möchten.</string>
+    <string name="select_lang">Sprache wählen(erfordert App-Neustart)</string>
     <string-array name="monthsList">
         <item>Sept</item>
         <item>Okt</item>
@@ -12,7 +16,7 @@
         <item>Feb</item>
         <item>Mär</item>
         <item>Apr</item>
-        <item>May</item>
+        <item>Mai</item>
         <item>Juni</item>
         <item>Juli</item>
         <item>Aug</item>
@@ -23,7 +27,7 @@
         <item>Feb</item>
         <item>Mär</item>
         <item>Apr</item>
-        <item>May</item>
+        <item>Mai</item>
         <item>Juni</item>
         <item>Juli</item>
         <item>Aug</item>
@@ -67,6 +71,28 @@
         <item>Paraclete</item>
         <item>Apostelsfasten</item>
         <item>Erlösungsfasten</item>
+        <item>Neues Jahr (St.Johannes)</item>
+        <item>Heilige Kreuz</item>
+        <item>Fasten der Propheten</item>
+        <item>Weihnachten</item>
+        <item>Neues Jahr(Gregorisch)</item>
+        <item>Lidet(Geez Weihnachten)</item>
+        <item>Beschneidung Christi</item>
+        <item>Dreikönigsfest</item>
+        <item>Hochzeit zu Kana</item>
+        <item>Tag der Arbeit</item>
+        <item>Fasten der Mariah Himmelfahrt</item>
+        <item>Berg Tabor</item>
+        <item>Mariah Himmelfahrt (Ashenda/Mariah)</item>
+        <item>Fasten zum Verständnis </item>
+        <item>Exil in Ägypten </item>
+        <item>St.Mary of Zion</item>
+        <item>Hl.Maria von Zion </item>
+        <item>Offenbarung der Hl.Maria</item>
+        <item>Promise of Redemption</item>
+        <item>Versprechen der Erlösung </item>
+        <item>Mariä Empfängnis</item>
+        <item>Engel Rufael</item>
     </string-array>
     <string name="no_holidays">hat keine bekannten Feiertage</string>
     <string name="holidays_title">Feirtage Fasten</string>
@@ -127,13 +153,13 @@
         <item>Jesus</item>
         <item>Markus der Apostel</item>
     </string-array>
-    <string name="bahre_hasab">B.Hasab</string>
+    <string name="bahre_hasab">Ideenmeer</string>
     <string name="converter">Konverter </string>
     <string name="lunar">Heilige Monat</string>
     <string name="annual">Hailige Jahr</string>
     <string name="calculate">Rechnen</string>
     <string name="convert">umsetzen</string>
-    <string name="insert_year_here">Geez Jahr eingeben</string>
+    <string name="insert_year_here">Jahr</string>
     <string name="from_geez">von Geez</string>
     <string name="from_Gregorian">von Gregorisch</string>
     <string name="home">Kalendar</string>
@@ -157,4 +183,8 @@
     <string name="show_gregorian">Mit Gregorisch Datum</string>
     <string name="widget_enable">Widget Aktivieren</string>
     <string name="widget_text">Bitte bewerten, liken, teilen Sie uns auf… </string>
+    <string name="month">month</string>
+    <string name="bahti">"Erste Tag: "</string>
+    <string name="change_year">Jahre ändern</string>
+    <string name="ad">AD</string>
 </resources>

@@ -9,8 +9,9 @@
         <item name="textInputStyle">@style/AppTextField</item>
         <item name="colorControlHighlight">@color/blueGreen</item>
         <item name="toolbarStyle">@style/MyToolbar</item>
-        <item name="android:windowBackground">@drawable/background_window</item>
+        <!--item name="android:windowBackground">@drawable/background_window</item-->
         <item name="android:navigationBarColor">@color/Neon</item>
+        <item name="fontFamily">@font/abyssinica</item>
     </style>
 
     <style name="AppTextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -38,5 +39,11 @@
     <style name="ThemeOverlay.MyApplication.AppWidgetContainer" parent="">
         <item name="appWidgetBackgroundColor">@color/Neon</item>
         <item name="appWidgetTextColor">@color/white</item>
+    </style>
+    <style name="input_dialog" parent="">
+        <item name="cornerSizeTopLeft">10pt</item>
+        <item name="cornerSizeTopRight">10pt</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
     </style>
 </resources>
