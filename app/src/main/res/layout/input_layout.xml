@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/inputLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:boxBackgroundColor="?attr/colorSecondary"
+    android:paddingEnd="4dp"
+    android:paddingStart="4dp"
+    android:paddingBottom="1dp"
+    app:boxCornerRadiusBottomStart="5dp"
+    app:boxCornerRadiusTopEnd="5dp"
+    app:circularflow_radiusInDP="5dp"
+    android:background="@color/lightGrey"
+    android:minWidth="300dp"
+    android:layout_toStartOf="@+id/edit_query"
+    style="@style/input_dialog"
+    android:layout_alignParentStart="true">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/query_input"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:hint="@string/insert_year_here"
+        android:layout_height="match_parent"
+        android:inputType="number"
+        android:layout_marginBottom="4dp"/>
+
+</com.google.android.material.textfield.TextInputLayout>

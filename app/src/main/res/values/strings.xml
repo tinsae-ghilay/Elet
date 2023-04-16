@@ -4,10 +4,14 @@
     <string name="done">Done</string>
     <string name="holidays_title">Feasts n Fasts</string>
     <string name="setting">Setting</string>
+    <string name="date_options">Date options</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="reboot_message">For the preferred language to take effect, app needs to restart. Please select YES if want to change it now or NO if you would rather have it change next time you start it</string>
 
     <!-- Preference Titles -->
     <!-- Messages Preferences -->
-    <string name="select_lang">Select Language</string>
+    <string name="select_lang">Select Language(Requires App restart)</string>
     <string name="restarted">App has been restarted</string>
     <string name="from_geez">From Geez</string>
     <string name="from_Gregorian">From Gregorian</string>
@@ -60,10 +64,10 @@
     </string-array>
     <string-array name="holy_days">
         <item>Era</item>
-        <item>First Day</item>
+        <item>first day of year</item>
         <item>Abeqtie</item>
         <item>Proclamation"</item>
-        <item>Fast of ninweh</item>
+        <item>Fast of nineveh</item>
         <item>Great fast starts</item>
         <item>Mount of olives</item>
         <item>Palm sunday</item>
@@ -74,6 +78,28 @@
         <item>Paraclete</item>
         <item>Fast of Apostles</item>
         <item>Fast of salvation</item>
+        <item>New Year(St.John)</item>
+        <item>Holy Cross</item>
+        <item>Fast of prophets</item>
+        <item>Christmas</item>
+        <item>Gregorian New year</item>
+        <item>Geez christmas</item>
+        <item>Circumcision of christ</item>
+        <item>Epiphany</item>
+        <item>wedding at Cana</item>
+        <item>May day</item>
+        <item>Fast of assumption</item>
+        <item>Mt. Tabor</item>
+        <item>Assumption of Mary(Ashenda/Mariah)</item>
+        <item>Fast of comprehension</item>
+        <item>Exile to Egypt</item>
+        <item>St.Mary of Zion</item>
+        <item>Presentation of Mary</item>
+        <item>Vision of Mary</item>
+        <item>Promise of Redemption</item>
+        <item>Birth of St.Mary</item>
+        <item>Immaculate conception</item>
+        <item>Angel Rufael</item>
     </string-array>
     <string name="no_holidays">has no known holidays.</string>
     <string-array name="national_holidays">
@@ -133,13 +159,13 @@
         <item>Jesus</item>
         <item>Markus the Apostle</item>
     </string-array>
-    <string name="bahre_hasab">B.Hasab</string>
+    <string name="bahre_hasab">Computus</string>
     <string name="converter">Converter</string>
     <string name="lunar">Daily Holidays</string>
     <string name="annual">Annual Holidays</string>
     <string name="calculate">Calculate</string>
     <string name="convert">Convert</string>
-    <string name="insert_year_here">insert year here</string>
+    <string name="insert_year_here">Year</string>
     <string name="home">Calendar</string>
     <string name="holidays">Holidays</string>
     <string-array name="eritrean">
@@ -161,4 +187,8 @@
     <string name="show_gregorian">Along with Gregorian dates</string>
     <string name="widget_enable">Enable widget</string>
     <string name="widget_text">Please Rate, Like, share us on…</string>
+    <string name="month">month</string>
+    <string name="bahti">starts on : </string>
+    <string name="change_year">change year</string>
+    <string name="ad">AD</string>
 </resources>
