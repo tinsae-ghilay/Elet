@@ -1,4 +1,4 @@
-package com.tgk.elet.calendars
+package com.tgk.elet.ui.widgets
 
 import android.content.Context
 import android.graphics.Color
@@ -19,7 +19,7 @@ import com.tgk.elet.temporal.Month
  * @since March 19,2023 Gregorian / March 10, 2015 Geez Calendar
  */
 
-class CalendarView : CalendarViewDelegator{
+class CalendarView : CalendarViewDelegator {
 
     private val titleText: TextView
 

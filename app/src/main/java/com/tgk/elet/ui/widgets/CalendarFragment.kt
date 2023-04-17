@@ -1,4 +1,4 @@
-package com.tgk.elet.ui.calendar
+package com.tgk.elet.ui.widgets
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.tgk.Elet.R
 import com.tgk.Elet.databinding.FragmentCalendarBinding
-import com.tgk.elet.calendars.CalendarViewDelegator
+import com.tgk.elet.ui.widgets.CalendarViewDelegator
 import com.tgk.elet.common.CommonViewModel
 import com.tgk.elet.common.Preferences.getPreferences
 import com.tgk.elet.geezDate.GeezMonth

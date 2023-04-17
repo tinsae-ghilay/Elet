@@ -1,4 +1,4 @@
-package com.tgk.elet.calendars
+package com.tgk.elet.ui.widgets
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

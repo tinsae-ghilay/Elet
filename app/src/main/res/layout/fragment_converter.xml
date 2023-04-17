@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/switchWidget">
 
-        <com.tgk.elet.calendars.DatePicker
+        <com.tgk.elet.ui.widgets.DatePicker
             android:id="@+id/geez_picker"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -69,7 +69,7 @@
             app:font="@font/abyssinica"
             app:weekDays="@array/week_days"
             app:weekEndColor="?attr/colorPrimary"/>
-        <com.tgk.elet.calendars.DatePicker
+        <com.tgk.elet.ui.widgets.DatePicker
             android:id ="@+id/gregorian_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.tgk.elet.calendars
+package com.tgk.elet.ui.widgets
 
 import android.content.Context
 import android.graphics.Color
@@ -135,7 +135,7 @@ class DatePicker: CalendarViewDelegator {
      */
     inner class DatePickerAdapter: MonthAdapter() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MonthAdapter.Holder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
 
             val param = ViewGroup.LayoutParams(-1,-1)
 

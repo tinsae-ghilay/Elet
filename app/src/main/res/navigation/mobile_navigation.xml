@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.tgk.elet.ui.calendar.CalendarFragment"
+        android:name="com.tgk.elet.ui.widgets.CalendarFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_calendar" >
         <action

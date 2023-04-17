@@ -1,4 +1,4 @@
-package com.tgk.elet.calendars
+package com.tgk.elet.ui.widgets
 
 import android.content.Context
 import android.graphics.Color
@@ -10,8 +10,8 @@ import androidx.core.view.setPadding
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.tgk.Elet.R
-import com.tgk.elet.calendars.Unit.dp
-import com.tgk.elet.calendars.Unit.sp
+import com.tgk.elet.ui.widgets.Unit.dp
+import com.tgk.elet.ui.widgets.Unit.sp
 import com.tgk.elet.temporal.BaseDate
 import com.tgk.elet.temporal.Month
 
@@ -105,7 +105,7 @@ open class CalendarViewDelegator: LinearLayout {
      * picked date listener from CalendarViewAdapter gets us Month index in adapter
      * selected date from month.
      */
-    protected val pickedDateListener = object : MonthAdapter.OnDatePicked{
+    protected val pickedDateListener = object : MonthAdapter.OnDatePicked {
         override fun datePicked(date: BaseDate, position: Int) {
             if (selectedDate != date){
                 selectedDate = date

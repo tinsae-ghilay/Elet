@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.tgk.Elet.R
 import com.tgk.Elet.databinding.FragmentConverterBinding
-import com.tgk.elet.calendars.OnDateSelectedListener
+import com.tgk.elet.ui.widgets.OnDateSelectedListener
 import com.tgk.elet.common.CommonViewModel
 import com.tgk.elet.common.Util
 import com.tgk.elet.common.Util.format
@@ -89,7 +89,7 @@ class ConverterFragment : Fragment() {
         }
 
     }
-    private val listener: OnDateSelectedListener = object : OnDateSelectedListener{
+    private val listener: OnDateSelectedListener = object : OnDateSelectedListener {
         override fun selectedDate(date: BaseDate) {
             selectedDate = date
             val dateRequested = if (date is GeezDate){

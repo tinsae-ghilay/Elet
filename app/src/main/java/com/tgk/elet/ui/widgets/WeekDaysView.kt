@@ -1,11 +1,11 @@
-package com.tgk.elet.calendars
+package com.tgk.elet.ui.widgets
 
 import android.content.Context
 import android.graphics.*
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
-import com.tgk.elet.calendars.Unit.sp
+import com.tgk.elet.ui.widgets.Unit.sp
 
 /**
  * WeekView extends View

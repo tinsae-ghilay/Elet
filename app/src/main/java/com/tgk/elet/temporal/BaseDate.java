@@ -18,8 +18,8 @@ public abstract class BaseDate implements Comparable<BaseDate>{
     protected void validate(){ // all values should be greater than 0
         String checked = "";
         if (year < 0) checked += "year - ";
-        if (month < 0) checked += "month - ";
-        if (date < 0) checked += "dayOfMonth -";
+        if (month <= 0) checked += "month - ";
+        if (date <= 0) checked += "dayOfMonth -";
         if (checked.equalsIgnoreCase("")){
             throw new IllegalArgumentException(checked+" should be greater than 0");
         }
@@ -64,51 +64,4 @@ public abstract class BaseDate implements Comparable<BaseDate>{
     public int compareTo(BaseDate toCompare) {
         return (month == toCompare.month)? date - toCompare.date : month - toCompare.month;
     }
-
-    /**
-     * Formats GeezDate to a desired pattern
-     * @return String
-     * moved to another class
-     */
-    /*public String format(DateFormat format){
-        String res;
-        switch (format) {
-            case DOTTED :
-                res = getDate() + "." + getMonth() + "." + getYear();
-                break;
-            case DOT_SPACED :
-                res = getDate() + ". " + getMonth() + ". " + getYear();
-                break;
-            case SLASHED :
-                res = getDate() + "/" + getMonth() + "/" + getYear();
-                break;
-            case SLASH_SPACED :
-                res = getDate() + "/ " + getMonth() + "/ " + getYear();
-                break;
-            case SPACED :
-                res = getDate() + "  " + getMonth() + "  " + getYear();
-                break;
-            case SPACED_WITH_COMA :
-                res = getDate() + ",  " + getMonth() + ",  " + getYear();
-                break;
-            case WITH_COMMA :
-                res = getDate() + "," + getMonth() + "," + getYear();
-                break;
-            case MONTH_NAMED :
-                res = getDate() + " " + MonthName.values()[getMonth() - 1] + ", " + getYear();
-                break;
-            case MONTH_NAMED_ISO :
-                res = MonthName.values()[getMonth() - 1] + " " + getDate() + " " + getYear();
-                break;
-            /*case DAY_NAMED :
-                res = DaysOfWeek.values()[dayOfTheWeek()] + ", " + Month.values()[getMonth() - 1] + " " + getDate() + ", " + getYear();
-                break;*/
-            /*default :
-            {
-                res = this.toString();
-                break;
-            }
-        }
-        return res;
-    }*/
 }
