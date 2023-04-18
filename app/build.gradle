@@ -1,10 +1,15 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
     compileSdkVersion 33
     buildToolsVersion "30.0.3"
+
+    kotlinOptions {
+        jvmTarget=11
+    }
 
     defaultConfig {
         applicationId "com.tgk.Elet"
@@ -24,8 +29,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     buildFeatures {
@@ -50,7 +55,9 @@ dependencies {
     implementation 'androidx.core:core:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     testImplementation 'junit:junit:4.13.2'
+    //implementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.google.android.gms:play-services-ads:22.0.0'

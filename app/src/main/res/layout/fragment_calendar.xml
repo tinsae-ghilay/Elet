@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tgk.elet.ui.widgets.CalendarFragment">
+    tools:context="com.tgk.elet.ui.calendar.CalendarFragment">
     <com.tgk.elet.ui.widgets.CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"

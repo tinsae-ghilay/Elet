@@ -1,4 +1,4 @@
-package com.tgk.elet.ui.widgets
+package com.tgk.elet.ui.calendar
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.tgk.elet.ui.widgets
+package com.tgk.elet.ui.calendar
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -16,12 +16,16 @@ import com.tgk.Elet.databinding.FragmentCalendarBinding
 import com.tgk.elet.ui.widgets.CalendarViewDelegator
 import com.tgk.elet.common.CommonViewModel
 import com.tgk.elet.common.Preferences.getPreferences
+import com.tgk.elet.common.Util.format
 import com.tgk.elet.geezDate.GeezMonth
 import com.tgk.elet.geezDate.HolyYear
+import com.tgk.elet.localDate.DateFormat
+import com.tgk.elet.temporal.BaseDate
 import com.tgk.elet.temporal.Month
 import com.tgk.elet.ui.adapters.HolidayAdapter
+import com.tgk.elet.ui.widgets.OnDateSelectedListener
 
-class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListener {
+class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListener,OnDateSelectedListener {
 
     private var _binding: FragmentCalendarBinding? = null
     private var snackBar:Snackbar? = null
@@ -103,5 +107,9 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
     private fun getShowGregorian(): Boolean{
         val pref:SharedPreferences = requireActivity().getPreferences()
         return pref.getBoolean("gregorian",false)
+    }
+
+    override fun selectedDate(date: BaseDate) {
+        showSnack("selected ${date.format(DateFormat.DAY_NAMED)}")
     }
 }
