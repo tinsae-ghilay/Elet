@@ -51,7 +51,7 @@ object Util {
     }
 
     /**
-     * Formats GeezDate to a desired pattern
+     * Formats Date to a desired pattern
      * @param format enum
      * @return String
      */
