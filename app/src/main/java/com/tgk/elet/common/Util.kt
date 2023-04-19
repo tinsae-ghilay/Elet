@@ -13,8 +13,9 @@ import com.tgk.elet.localDate.MonthLocal
 import com.tgk.elet.temporal.Month
 
 object Util {
-
+    // 20 years * 13 months in a year for geez calendar
     const val SPAN = 520
+    // 20 years * 12 months in a year for Gregorian calendar
     const val SPAN_LOCAL = 480
 
     val today: GeezDate = GeezDate.now()
