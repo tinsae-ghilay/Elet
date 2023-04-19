@@ -82,7 +82,7 @@ object Util {
         return "${m[month-1]} $year"
     }
 
-    // what is happening here?
+    // Geez Calendar months asan List
 
     fun generateCalendar(): List<HolyMonth>{
 
@@ -95,6 +95,8 @@ object Util {
         }
         return months
     }
+
+    // Gregorian Calendar months as a List
 
     fun generateGregorianCalendar():List<MonthLocal>{
 
