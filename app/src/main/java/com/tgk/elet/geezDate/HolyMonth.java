@@ -8,6 +8,7 @@ import com.tgk.Elet.R;
  * this will be replaced by String resources and accessor in a singleton
  */
 public class HolyMonth extends GeezMonth {
+
     public static String[] daySaint = {"ልደታ ማርያም", "ኢዮብ ጻድቅ", "ባኣታ ማርያም", "ዮሓንስ ወልደ ነጎድጓድ", "ጋብር", "የሱስ/ቁስቁዋም", "ስላሴ", "አባ ኪሮስ"
             ,"ቶማስ ሃዋርያ", "መስቀል", "ኢያቄም ወ ሃና", "ሚካኤል መልኣኽ", "እግዚአብሔር አብ", "አቡነ አረጋዊ", "ቄርቆስ", "ኪዳነ ምህረት"
             ,"ቅዱስ እስጢፋኖስ", "ፊልጶስ ሐዋርያ", "ገብሪኤል", "ጽንሰታ", "ማርያም", "ኡራኤል", "ጊዮርጊስ", "አቡነ ተኽለ ሃይማኖት", "መርቆሬዎስ"
@@ -34,7 +35,7 @@ public class HolyMonth extends GeezMonth {
         }
         return saints;
     }
-    public HolyDay[] getHolyDays(){
+    public HolyDay[] getHolyDays(boolean showEritrean, boolean showTigraian){
         return HolyYear.ofMonth(this);
     }
 }

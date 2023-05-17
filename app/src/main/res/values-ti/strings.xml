@@ -80,7 +80,7 @@
         <item>ግዝረት</item>
         <item>ጥምቀት</item>
         <item>ቃና ዘ ገሊላ</item>
-        <item>መዓልቲ ሰራሕተኛታት</item>
+        <item>መዓልቲ ሰራሕተኛታት - ዓለም ለኻዊ</item>
         <item>ጾመ ፍልሰታ</item>
         <item>ደብረ ታቦር</item>
         <item>ፍልሰታ (ኣሸንዳ / ማርያ )</item>
@@ -93,65 +93,53 @@
         <item>ልደታ</item>
         <item>ፅንሰታ</item>
         <item>ሩፋኤል</item>
+        <item>መዓልቲ ደቂ አንስትዮ - ዓለም ለኻዊ</item>
+        <item>መዓልቲ አደ - ዓለም ለኻዊ</item>
+        <!-- Specific to Eritrea -->
+        <item>ፈንቅል</item>
+        <item>መዓልቲ ናጽነት ኤርትራ</item>
+        <item>መዓልቲ ሰማእታት ኤርትራ</item>
+        <item>ባሕቲ መስከረም (ምጅማር ብረታዊ ቃልሲ ህዝቢ ኤርትራ)</item>
+        <!-- Specific to Tigray -->
+        <item>11 ለካቲት (ምጅማር ብረታዊ ቃልሲ ህዝቢ ትግራይ)</item>
+        <item>ስዕረት ጥልያን አብ ዓድዋ</item>
+        <item>ውድቀት ደርግ </item>
     </string-array>
     <string name="no_holidays">ዝተፈልጠ ባዓል የብላን</string>
     <string name="holidays_title">ባዓላትን አጽዋማትን</string>
-    <string-array name="national_holidays">
-        <item>ሓድሽ ዓመት (ቅዱስ ዮሓንስ)</item>
-        <item>መስቀል</item>
-        <item>ጾመ ነብያት</item>
-        <item>ልደት ፈረንጂ</item>
-        <item>ሓድሽ ዓመት ፈረንጂ</item>
-        <item>ልደት</item>
-        <item>ግዝረት</item>
-        <item>ጥምቀት</item>
-        <item>ቃና ዘ ገሊላ</item>
-        <item>መዓልቲ ሰራሕተኛታት</item>
-        <item>ጾመ ፍልሰታ</item>
-        <item>ደብረ ታቦር</item>
-        <item>ፍልሰታ (ኣሸንዳ / ማርያ )</item>
-        <item>ጾመ ገሃድ</item>
-        <item>ቁስቛም</item>
-        <item>ማርያም ጽዮን</item>
-        <item>ባኣታ ማርያም</item>
-        <item>ኣስተርእዮ</item>
-        <item>ኪዳነ ምሕረት</item>
-        <item>ልደታ</item>
-        <item>ፅንሰታ</item>
-        <item>ሩፋኤል</item>
-    </string-array>
+
     <string-array name="daily_events">
         <item>Empty</item>
-        <item>ልደታ ማርያም</item>
-        <item>ኢዮብ ጻድቅ</item>
-        <item>ባኣታ ማርያም</item>
+        <item>ልደታ ማርያም፣ ራጉኤል፣ ኤልያስ</item>
+        <item>ኢዮብ ጻድቅ፣ ታዴዎስ ሐዋርያ </item>
+        <item>ባኣታ ማርያም፣ ዜና ማርቆስ፣ ነአኩቶ ለአብ</item>
         <item>ዮሓንስ ወልደ ነጎድጓድ</item>
-        <item>ጋብር</item>
-        <item>የሱስ/ቁስቁዋም</item>
-        <item>ስላሴ</item>
-        <item>አባ ኪሮስ</item>
-        <item>ቶማስ ሃዋርያ</item>
+        <item>ጋብር፣ ጴጥሮስ ወጳውሎስ</item>
+        <item>የሱስ/ቁስቁዋም፣ ቅድስት ኣርሴማ</item>
+        <item>ስላሴ፣ ፊልሞን፣ አብላንዮስ</item>
+        <item>አባ ኪሮስ፣ ኣርበእቱ እንስሣ፣ ማቴዎስ፣ ዮልያኖስ</item>
+        <item>ቶማስ ሃዋርያ፣ እንድርያስ ሐዋርያ፣ አውሳብዮስ፣ ኣርበእቱ ሰማዕት</item>
         <item>መስቀል</item>
         <item>ኢያቄም ወ ሃና</item>
         <item>ሚካኤል መልኣኽ</item>
-        <item>እግዚአብሔር አብ</item>
-        <item>አቡነ አረጋዊ</item>
-        <item>ቄርቆስ</item>
+        <item>እግዚአብሔር አብ፣ ሩፋኤል መልኣኽ</item>
+        <item>አቡነ አረጋዊ፣ አባ ገብረ ክርስቶስ</item>
+        <item>ቄርቆስ ወዲ ኢየሉጣ፣ ስልፋኮስ</item>
         <item>ኪዳነ ምህረት</item>
-        <item>ቅዱስ እስጢፋኖስ</item>
-        <item>ፊልጶስ ሐዋርያ</item>
-        <item>ገብሪኤል</item>
-        <item>ጽንሰታ</item>
-        <item>ማርያም</item>
+        <item>ቅዱስ እስጢፋኖስ፣ ሉቃስ ዘዓምደ ብርሃን፤ አቡነ ዮናስ</item>
+        <item>ሐዋርያ ፊልጶስ፣ ኤስድሮስ ሰማዕት፣ ኤዎስጣጤዎስ ሰማዕት፤ አቡነ ቴዎድሮስ</item>
+        <item>ገብርኤል መልኣኽ፣ አርቃዴዎስ</item>
+        <item>ጽንሰታ ለማርያም፣ ነቢዩ ኤልሳዕ፣ ነቢይ ሓጌ</item>
+        <item>በዓለ እግዝእትነ ማርያም</item>
         <item>ኡራኤል</item>
-        <item>ጊዮርጊስ</item>
-        <item>አቡነ ተኽለ ሃይማኖት</item>
-        <item>መርቆሬዎስ</item>
-        <item>ቅዱስ ዮሴፍ</item>
-        <item>መድሃኔ ዓለም</item>
-        <item>ቆስጠንጢኖስ</item>
-        <item>ባዓለ እግዚኣብሄር(የሱስ)</item>
-        <item>ማርቆስ ወንጌላዊ</item>
+        <item>ቅዱስ ጊዮርጊስ፣ ለጊኖስ ሰማዕት</item>
+        <item>አቡነ ተክለ ሃይማኖት፣ ቅድስት ክርስቶስ ሰምራ</item>
+        <item>መርቆሬዎስ፣ አኒፍኖስ</item>
+        <item>ቅዱስ ዮሴፍ፣ ሆሴዕ ነቢይ፣ ሳዶቅ ሰማዕት፤ አቡነ ሰላማ</item>
+        <item>መድኃኔዓለም፣ ሕዝቅያስ ነቢይ፣ አባ ዮሐንስ</item>
+        <item>አማኑኤል፣ ቆስጠንጢኖስ፣ አብርሃም</item>
+        <item>በዓለ ወልድ፣ ሳሙኤል ዘወገግ</item>
+        <item>ማርቆስ ወንጌላዊ፡ የውሓንስ መጥምቕ</item>
     </string-array>
     <string name="bahre_hasab">ባሕረ ሓሳብ</string>
     <string name="converter">ዕለት መቐየሪ</string>

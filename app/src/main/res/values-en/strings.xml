@@ -87,7 +87,7 @@
         <item>Circumcision of christ</item>
         <item>Epiphany</item>
         <item>wedding at Cana</item>
-        <item>May day</item>
+        <item>May day - International</item>
         <item>Fast of assumption</item>
         <item>Mt. Tabor</item>
         <item>Assumption of Mary(Ashenda/Mariah)</item>
@@ -100,32 +100,20 @@
         <item>Birth of St.Mary</item>
         <item>Immaculate conception</item>
         <item>Angel Rufael</item>
+        <item>Womens day - International</item>
+        <item>Mothers day - International</item>
+        <!-- Specific to Eritrea -->
+        <item>Fenkil (Liberation of Massawa)</item>
+        <item>Eritrean Independence day</item>
+        <item>Eritrean Martyrs day</item>
+        <item>Beginning of Eritrean armed struggle</item>
+        <!-- Specific to Tigray -->
+        <item>Beginning of Tigraian armed struggle</item>
+        <item>Victory at Adwa</item>
+        <item>Downfall of the Dergue</item>
     </string-array>
     <string name="no_holidays">has no known holidays.</string>
-    <string-array name="national_holidays">
-        <item>Geez New Year(St.John)</item>
-        <item>Holy Cross</item>
-        <item>Fast of prophets</item>
-        <item>Christmas</item>
-        <item>New year</item>
-        <item>Geez christmas</item>
-        <item>Circumcision of christ</item>
-        <item>Epiphany</item>
-        <item>wedding at Cana</item>
-        <item>May day</item>
-        <item>Fast of assumption</item>
-        <item>Mt. Tabor</item>
-        <item>Assumption of Mary(Ashenda/Mariah)</item>
-        <item>Fast of comprehension</item>
-        <item>Exile to Egypt</item>
-        <item>St.Mary of Zion</item>
-        <item>Presentation of Mary</item>
-        <item>Vision of Mary</item>
-        <item>Promise of Redemption</item>
-        <item>Birth of St.Mary</item>
-        <item>Immaculate conception</item>
-        <item>Angel Rufael</item>
-    </string-array>
+
     <string-array name="daily_events">
         <item></item>
         <item>Birth of St.Mary</item>

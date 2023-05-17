@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tgk.Elet.R
 import com.tgk.Elet.databinding.FragmentHolidaysBinding
 import com.tgk.elet.common.CommonViewModel
+import com.tgk.elet.common.Preferences
+import com.tgk.elet.common.Preferences.setPreferenceValues
+import com.tgk.elet.common.Preferences.showEritrean
+import com.tgk.elet.common.Preferences.showTigraian
 import com.tgk.elet.common.Util
 import com.tgk.elet.geezDate.HolyMonth
 import com.tgk.elet.geezDate.HolyYear
@@ -30,13 +34,15 @@ class HolidaysFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private val holidayAdapter by lazy { HolidayAdapter(HolyYear.ofYear(Util.today.year))}
+    private val holidayAdapter by lazy { HolidayAdapter(HolyYear.ofYear(Util.today.year,Preferences.showEritrean,Preferences.showTigraian))}
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        //val holidaysViewModel = ViewModelProvider(this)[HolidaysViewModel::class.java]
+        // we have to look for preferences whenever wo navigate back here
+        requireActivity().setPreferenceValues()
+
         val cViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
         cViewModel.setFragmentTitle(requireContext().getString(R.string.annual))
         cViewModel.setShowNavButtons(View.GONE)
@@ -68,7 +74,7 @@ class HolidaysFragment : Fragment() {
         binding.monthly.setBackgroundResource(R.color.white)
         binding.annual.setBackgroundResource(R.color.Neon)
         holidayAdapter.isForAnnualList = true
-        holidayAdapter.setHolidays(HolyYear.ofYear(Util.today.year))
+        holidayAdapter.setHolidays(HolyYear.ofYear(Util.today.year,showEritrean,showTigraian))
         currentPage = ANNUAL
 
     }

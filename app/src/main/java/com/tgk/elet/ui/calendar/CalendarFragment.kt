@@ -1,6 +1,5 @@
 package com.tgk.elet.ui.calendar
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.tgk.Elet.R
 import com.tgk.Elet.databinding.FragmentCalendarBinding
-import com.tgk.elet.ui.widgets.CalendarViewDelegator
 import com.tgk.elet.common.CommonViewModel
-import com.tgk.elet.common.Preferences.getPreferences
+import com.tgk.elet.common.Preferences
+import com.tgk.elet.common.Preferences.getValue
+import com.tgk.elet.common.Preferences.setPreferenceValues
+import com.tgk.elet.common.Preferences.showEritrean
+import com.tgk.elet.common.Preferences.showTigraian
+import com.tgk.elet.common.Util
 import com.tgk.elet.common.Util.format
 import com.tgk.elet.geezDate.GeezMonth
 import com.tgk.elet.geezDate.HolyYear
@@ -23,6 +26,7 @@ import com.tgk.elet.localDate.DateFormat
 import com.tgk.elet.temporal.BaseDate
 import com.tgk.elet.temporal.Month
 import com.tgk.elet.ui.adapters.HolidayAdapter
+import com.tgk.elet.ui.widgets.CalendarViewDelegator
 import com.tgk.elet.ui.widgets.OnDateSelectedListener
 
 class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListener,OnDateSelectedListener {
@@ -42,6 +46,8 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle? ): View {
 
+        // we have to look for preferences whenever wo navigate back here
+        requireActivity().setPreferenceValues()
         // common view model
         val cViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
         cViewModel.setShowNavButtons(View.VISIBLE)
@@ -52,7 +58,7 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
 
         month.typeface = ResourcesCompat.getFont(requireContext(), R.font.abyssinica)
         month.setOnMonthChangedListener(this)
-        month.showGregorianDates = getShowGregorian()
+        month.showGregorianDates = requireActivity().getValue("gregorian")
 
 
         // Monthly Holiday list
@@ -60,7 +66,9 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
         //val decoration = DividerItemDecoration(requireActivity(),DividerItemDecoration.VERTICAL)
         //holidaysList.addItemDecoration(decoration)
 
-        val holidayAdapter = HolidayAdapter(HolyYear.ofMonth(GeezMonth(2015,6)))
+        val holidayAdapter = HolidayAdapter(HolyYear.ofMonth(
+                GeezMonth(Util.today.year,Util.today.month))
+        )
         holidaysList.layoutManager = vertical
         holidaysList.adapter = holidayAdapter
 
@@ -103,10 +111,6 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
             focusedMonth = it
             calendarViewModel.setCalendarMonth(it)
         }
-    }
-    private fun getShowGregorian(): Boolean{
-        val pref:SharedPreferences = requireActivity().getPreferences()
-        return pref.getBoolean("gregorian",false)
     }
 
     override fun selectedDate(date: BaseDate) {

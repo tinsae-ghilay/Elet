@@ -80,7 +80,7 @@
         <item>Beschneidung Christi</item>
         <item>Dreikönigsfest</item>
         <item>Hochzeit zu Kana</item>
-        <item>Tag der Arbeit</item>
+        <item>Tag der Arbeit - International</item>
         <item>Fasten der Mariah Himmelfahrt</item>
         <item>Berg Tabor</item>
         <item>Mariah Himmelfahrt (Ashenda/Mariah)</item>
@@ -93,33 +93,21 @@
         <item>Versprechen der Erlösung </item>
         <item>Mariä Empfängnis</item>
         <item>Engel Rufael</item>
+        <item>Frauentag - International</item>
+        <item>Mutertag - International</item>
+        <!-- Specific to Eritrea -->
+        <item>Fenkil- Befreiung von Massawa</item>
+        <item>Eritreischer Unabhängigkeitstag</item>
+        <item>Eritreischer Märtyrer Tag</item>
+        <item>Beginn des bewaffneten Kampfes Eritreas</item>
+        <!-- Specific to Tigray -->
+        <item>Beginn von Tigrays bewaffnetem Kampf</item>
+        <item>Sieg bei Adwa - Tigray</item>
+        <item>Untergang des Dergue -Äthiopien</item>
     </string-array>
     <string name="no_holidays">hat keine bekannten Feiertage</string>
     <string name="holidays_title">Feirtage Fasten</string>
-    <string-array name="national_holidays">
-        <item>Neues Jahr (St.Johannes)</item>
-        <item>Heilige Kreuz</item>
-        <item>Fasten der Propheten</item>
-        <item>Weihnachten</item>
-        <item>Neues Jahr(Gregorisch)</item>
-        <item>Lidet(Geez Weihnachten)</item>
-        <item>Beschneidung Christi</item>
-        <item>Dreikönigsfest</item>
-        <item>Hochzeit zu Kana</item>
-        <item>Tag der Arbeit</item>
-        <item>Fasten der Mariah Himmelfahrt</item>
-        <item>Berg Tabor</item>
-        <item>Mariah Himmelfahrt (Ashenda/Mariah)</item>
-        <item>Fasten zum Verständnis </item>
-        <item>Exil in Ägypten </item>
-        <item>St.Mary of Zion</item>
-        <item>Hl.Maria von Zion </item>
-        <item>Offenbarung der Hl.Maria</item>
-        <item>Promise of Redemption</item>
-        <item>Versprechen der Erlösung </item>
-        <item>Mariä Empfängnis</item>
-        <item>Engel Rufael</item>
-    </string-array>
+
     <string-array name="daily_events">
         <item></item>
         <item>Geburt der Heiligen Maria</item>

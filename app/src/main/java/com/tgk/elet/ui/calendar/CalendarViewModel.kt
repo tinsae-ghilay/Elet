@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tgk.elet.common.Preferences
 import com.tgk.elet.common.Util
 import com.tgk.elet.geezDate.HolyDay
 import com.tgk.elet.geezDate.HolyMonth
@@ -42,7 +43,7 @@ class CalendarViewModel : ViewModel() {
     // setter
     fun setCalendarMonth(index: Month){
         _calendarMonth.postValue(index as HolyMonth)
-        _holidays.postValue(index.holyDays)
+        _holidays.postValue(index.getHolyDays(Preferences.showEritrean,Preferences.showTigraian))
     }
 
     fun setShowGregorian(){

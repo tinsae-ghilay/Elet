@@ -7,7 +7,7 @@ import com.tgk.elet.temporal.BaseDate;
 
 public class HolyDay extends BaseDate {
 
-    private final String name;
+    //private final String name;
     private int nameIndex;
     
     // +15
@@ -21,14 +21,14 @@ public class HolyDay extends BaseDate {
             , "ማርያም ጽዮን", "ባኣታ ማርያም", "ኣስተርእዮ", "ኪዳነ ምሕረት", "ልደታ", "ፅንሰታ", "ሩፋኤል","ዝተፈልጠ በዓል የለን"};
     
     
-    HolyDay(int year, int month, int date,String name) {
+    public HolyDay(int year, int month, int date, String name) {
         super(year, month, date);
-        this.name = name;
+        //this.name = name;
     }
-    HolyDay(int year, int month, int date,int nameIndex){
+    public HolyDay(int year, int month, int date,int nameIndex){
         super(year, month, date);
         this.nameIndex=nameIndex;
-        this.name=holiday_names[nameIndex];
+        //this.name=String.valueOf(nameIndex);//holiday_names[nameIndex];
     }
 
 
@@ -37,9 +37,9 @@ public class HolyDay extends BaseDate {
         return MonthName.values()[getMonth()-1];
     }
 
-    public String getName(){
+    /*public String getName(){
         return (name==null)? holiday_names[nameIndex] : name;
-    }
+    }*/
 
     public int getNameIndex() {
         return nameIndex;
@@ -48,7 +48,7 @@ public class HolyDay extends BaseDate {
     @NonNull
     @Override
     public String toString(){
-        return name+" "+ super.toString()+" ይውዕል።";
+        return /*name+*/" "+ super.toString()+" ይውዕል።";
     }
 
 }

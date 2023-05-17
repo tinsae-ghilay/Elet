@@ -43,7 +43,7 @@ public class MonthLocal extends Month {
      * @return Int
      */
     @Override
-    protected int getBahtiIndex() {
+    public int getBahtiIndex() {
         int y = getYear();
         int m = getMonth();
         int d = 1;

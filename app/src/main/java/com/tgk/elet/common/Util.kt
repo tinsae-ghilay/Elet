@@ -119,4 +119,9 @@ object Util {
         _apostles = res.getStringArray(R.array.evangelists)
     }
 
+    fun Int.isGregorianLeapYear():Boolean {
+        return if (this % 100 == 0) this % 400 == 0
+        else this % 4 == 0;
+    }
+
 }

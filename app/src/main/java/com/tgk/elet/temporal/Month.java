@@ -24,7 +24,7 @@ public abstract class Month {
         if (this.year < 0) throw new IllegalArgumentException("Value of year should be greater than zero");
     }
 
-    protected int getBahtiIndex(){
+    public int getBahtiIndex(){
         int ameteAlem = BahreHasab.EPOCH + year;
         return (((ameteAlem+(ameteAlem/4)-1)%7)+(getMonth())*30)%7;
     }

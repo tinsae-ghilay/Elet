@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import com.tgk.elet.common.Preferences
 import com.tgk.elet.geezDate.GeezDate
 import com.tgk.elet.geezDate.HolyDay
 import com.tgk.elet.geezDate.HolyMonth
@@ -26,7 +27,7 @@ open class CalendarMonthView : MonthView {
         it.isAntiAlias = true
     }
     var showGregorianDates: Boolean = true
-    val holidays:Array<HolyDay> get() = (month as HolyMonth).holyDays
+    val holidays:Array<HolyDay> get() = (month as HolyMonth).getHolyDays(Preferences.showEritrean,Preferences.showTigraian)
 
     constructor(context: Context): this(context,null)
     constructor(context: Context,attributeSet: AttributeSet?): this(context,attributeSet,0)

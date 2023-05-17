@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         setAppLocale(pref)
         Util.setTemporalArrays(this)
 
+        //val indices = resources.getStringArray(R.array.holy_days)
+        //Log.w("HOLIDAYS"," has ${indices.size} items")
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val toolBar = binding.toolbar
         toolBar.datum.text = cViewModel.geezDate.format(DateFormat.MONTH_NAMED)

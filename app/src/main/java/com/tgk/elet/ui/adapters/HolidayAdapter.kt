@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tgk.Elet.R
 import com.tgk.Elet.databinding.HolidayItemBinding
+import com.tgk.elet.common.Preferences.showEritrean
+import com.tgk.elet.common.Preferences.showTigraian
 import com.tgk.elet.common.Util.format
 import com.tgk.elet.geezDate.HolyDay
 import com.tgk.elet.geezDate.HolyMonth
@@ -71,7 +73,7 @@ class HolidayAdapter(private var holidays: Array<HolyDay>) : RecyclerView.Adapte
     }
     fun setMonth(month: HolyMonth){
         this.month = month
-        this.holidays = month.holyDays
+        this.holidays = month.getHolyDays(showEritrean,showTigraian)
         notifyDataSetChanged()
     }
 }
