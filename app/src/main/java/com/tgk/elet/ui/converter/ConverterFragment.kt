@@ -16,6 +16,7 @@ import com.tgk.elet.geezDate.GeezDate
 import com.tgk.elet.localDate.DateFormat
 import com.tgk.elet.localDate.DateLocal
 import com.tgk.elet.temporal.BaseDate
+import com.tgk.elet.ui.widgets.SwitchView
 
 class ConverterFragment : Fragment() {
 
@@ -55,13 +56,23 @@ class ConverterFragment : Fragment() {
         converterViewModel.gregorianCalendar.observe(requireActivity()){
             gregorianPicker.months = it
         }
-        binding.geez.also {
-            it.setOnClickListener { v -> toggleChronology(v) }
-        }
-        binding.gregorian.also {
-            it.setOnClickListener { v -> toggleChronology(v) }
-        }
+        binding.switches.onSwitchAction = onSwitchAction
+
         return binding.root
+    }
+
+    private val onSwitchAction: SwitchView.OnSwitchAction = object: SwitchView.OnSwitchAction{
+        override fun switchTo(state: SwitchView.SwitchState) {
+            when(state){
+                SwitchView.SwitchState.LEFT ->{
+                    binding.switcher.showPrevious()
+                }
+                else -> {
+                    binding.switcher.showNext()
+                }
+            }
+        }
+
     }
 
 
@@ -72,23 +83,7 @@ class ConverterFragment : Fragment() {
         _binding = null
     }
 
-    private fun toggleChronology(view:View){
 
-        view.setBackgroundResource(R.color.Neon)
-        if (view == binding.geez){
-            binding.gregorian.setBackgroundResource(R.color.white)
-            if (binding.switcher.currentView != binding.geezPicker){
-                binding.switcher.showNext()
-            }
-
-        }else{
-            if (binding.switcher.currentView != binding.gregorianPicker){
-                binding.switcher.showPrevious()
-            }
-            binding.geez.setBackgroundResource(R.color.white)
-        }
-
-    }
     private val listener: OnDateSelectedListener = object : OnDateSelectedListener {
         override fun selectedDate(date: BaseDate) {
             selectedDate = date

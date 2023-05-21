@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/month"
             android:textSize="20sp"
-            android:textColor="?attr/colorPrimary"/>
+            android:textColor="?android:attr/textColorPrimary"/>
         <TextView
             android:id="@+id/events"
             android:layout_width="match_parent"

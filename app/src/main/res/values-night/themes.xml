@@ -1,7 +1,32 @@
 <resources>
 
-    <style name="ThemeOverlay.MyApplication.AppWidgetContainer" parent="">
+    <!--style name="ThemeOverlay.MyApplication.AppWidgetContainer" parent="">
         <item name="appWidgetBackgroundColor">@color/light_blue_900</item>
         <item name="appWidgetTextColor">@color/Neon</item>
+    </style-->
+
+    <!-- Base application theme. -->
+    <style name="Theme.Elet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- main primary color  dark gray in dark mode -->
+        <item name="colorPrimary">@color/darkGrey</item>
+        <!-- top notifications bar color dark gray in dark mode -->
+        <item name="colorPrimaryDark">@color/black</item>
+        <!--  color used for holidays remains the same in all themes-->
+        <item name="colorAccent">@color/red_ish</item>
+        <item name="textInputStyle">@style/AppTextField</item>
+        <item name="colorControlHighlight">@color/darker_lightGray</item>
+        <item name="toolbarStyle">@style/MyToolbar</item>
+        <!-- text color   should be white in dark mode -->
+        <item name="android:textColor">@color/super_lightGrey</item>
+        <!-- Week end text color -->
+        <item name="android:textColorPrimary">@color/darker_lightGray</item>
+        <!-- indicator text color -->
+        <item name="android:textColorHighlight">@color/red_ish</item>
+        <!-- text color offset -->
+        <item name="android:textColorHint">@color/cardview_dark_background</item>
+        <!--item name="android:windowBackground">@color/white</item-->
+        <item name="android:navigationBarColor">?attr/colorPrimaryDark</item>
+        <item name="fontFamily">@font/abyssinica</item>
     </style>
 </resources>

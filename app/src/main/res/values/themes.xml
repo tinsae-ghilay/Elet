@@ -2,15 +2,25 @@
     <!-- Base application theme. -->
     <style name="Theme.Elet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
+        <!-- main primary color  dark gray in dark mode -->
         <item name="colorPrimary">@color/Neon</item>
+        <!-- top notifications bar color dark gray in dark mode -->
         <item name="colorPrimaryDark">@color/Neon</item>
-        <item name="colorAccent">@color/Neon</item>
-        <item name="boxBackgroundColor">@android:color/white</item>
+        <!--  color used for holidays remains the same in all themes-->
+        <item name="colorAccent">@color/red_ish</item>
         <item name="textInputStyle">@style/AppTextField</item>
-        <item name="colorControlHighlight">@color/blueGreen</item>
+        <item name="colorControlHighlight">@color/darker_lightGray</item>
         <item name="toolbarStyle">@style/MyToolbar</item>
-        <!--item name="android:windowBackground">@drawable/background_window</item-->
-        <item name="android:navigationBarColor">@color/Neon</item>
+        <!-- text color   should be white in dark mode -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Week end text color -->
+        <item name="android:textColorPrimary">?attr/colorPrimary</item>
+        <!-- indicator text color -->
+        <item name="android:textColorHighlight">@color/red_ish</item>
+        <!-- text color offset -->
+        <item name="android:textColorHint">@color/lightGrey</item>
+        <!--item name="android:windowBackground">@color/white</item-->
+        <item name="android:navigationBarColor">?attr/colorPrimaryDark</item>
         <item name="fontFamily">@font/abyssinica</item>
     </style>
 

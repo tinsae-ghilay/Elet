@@ -20,7 +20,9 @@ import com.tgk.elet.common.Preferences.showEritrean
 import com.tgk.elet.common.Preferences.showTigraian
 import com.tgk.elet.common.Util
 import com.tgk.elet.common.Util.format
+import com.tgk.elet.common.Util.today
 import com.tgk.elet.geezDate.GeezMonth
+import com.tgk.elet.geezDate.HolyMonth
 import com.tgk.elet.geezDate.HolyYear
 import com.tgk.elet.localDate.DateFormat
 import com.tgk.elet.temporal.BaseDate
@@ -66,9 +68,9 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
         //val decoration = DividerItemDecoration(requireActivity(),DividerItemDecoration.VERTICAL)
         //holidaysList.addItemDecoration(decoration)
 
-        val holidayAdapter = HolidayAdapter(HolyYear.ofMonth(
+        val holidayAdapter = HolidayAdapter(HolyMonth(today.year,Util.today.month))/*HolidayAdapter(HolyYear.ofMonth(
                 GeezMonth(Util.today.year,Util.today.month))
-        )
+        )*/
         holidaysList.layoutManager = vertical
         holidaysList.adapter = holidayAdapter
 

@@ -8,6 +8,7 @@ import com.tgk.Elet.databinding.HolidayItemBinding
 import com.tgk.elet.common.Preferences.showEritrean
 import com.tgk.elet.common.Preferences.showTigraian
 import com.tgk.elet.common.Util.format
+import com.tgk.elet.common.Util.name
 import com.tgk.elet.geezDate.HolyDay
 import com.tgk.elet.geezDate.HolyMonth
 import com.tgk.elet.localDate.DateFormat
@@ -18,6 +19,10 @@ class HolidayAdapter(private var holidays: Array<HolyDay>) : RecyclerView.Adapte
     var isForAnnualList = true
 
     private var month: Month? = null
+
+    constructor(month : HolyMonth) : this(month.getHolyDays(showEritrean, showTigraian)){
+        this.month = month
+    }
     inner class Holder(binding: HolidayItemBinding): RecyclerView.ViewHolder(binding.root){
         private val dates = binding.date
         private val events = binding.events
@@ -29,7 +34,6 @@ class HolidayAdapter(private var holidays: Array<HolyDay>) : RecyclerView.Adapte
         fun bind(holiday: HolyDay?){
 
             dates.text = holiday?.format(DateFormat.DAY_OF_MONTH)
-            //events.text = holiday?.name  // replace this with the below code-- but update resources first
             if (isForAnnualList){
                 holiday?.nameIndex?.let {
                     events.text = holidays[it]
@@ -42,16 +46,17 @@ class HolidayAdapter(private var holidays: Array<HolyDay>) : RecyclerView.Adapte
         }
 
         fun bindNull(){
-            if (month!=null){
-                dates.text = month?.format()
-            }
-            else dates.text = ""
+            // if(month != null) dates.text = month?.name() else  dates.text = ""
+            month?.let { dates.text = it.name() } ?: run { dates.text = "" }
             events.text = this.itemView.context.getString(R.string.no_holidays)
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding = HolidayItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = HolidayItemBinding.inflate(
+            LayoutInflater.from(parent.context)
+            ,parent,false)
         return Holder(binding)
     }
 

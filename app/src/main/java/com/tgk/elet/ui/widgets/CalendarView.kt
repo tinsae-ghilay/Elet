@@ -57,7 +57,7 @@ class CalendarView : CalendarViewDelegator {
         val titleLayout = LinearLayout(context).also {
             it.weightSum =7f
             //it.setPadding(2.dp)
-            it.setBackgroundResource(R.color.super_lightGrey)
+            it.setBackgroundColor(offsetColor)
         }
 
         // navigation buttons

@@ -18,6 +18,7 @@ import com.tgk.elet.common.Util
 import com.tgk.elet.geezDate.HolyMonth
 import com.tgk.elet.geezDate.HolyYear
 import com.tgk.elet.ui.adapters.HolidayAdapter
+import com.tgk.elet.ui.widgets.SwitchView
 
 class HolidaysFragment : Fragment() {
 
@@ -34,7 +35,7 @@ class HolidaysFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private val holidayAdapter by lazy { HolidayAdapter(HolyYear.ofYear(Util.today.year,Preferences.showEritrean,Preferences.showTigraian))}
+    private val holidayAdapter by lazy { HolidayAdapter(HolyYear.ofYear(Util.today.year,showEritrean,showTigraian))}
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,13 +56,19 @@ class HolidaysFragment : Fragment() {
         //holidays.addItemDecoration(decoration)
         holidays.layoutManager = vertical
         holidays.adapter = holidayAdapter
-        showAnnual()
-        binding.annual.setOnClickListener {
+        binding.switches.onSwitchAction = object : SwitchView.OnSwitchAction{
+            override fun switchTo(state: SwitchView.SwitchState) {
+                if (state == SwitchView.SwitchState.LEFT) showAnnual()
+                else showMonthly()
+            }
+        }
+        //showAnnual()
+        /*binding.annual.setOnClickListener {
             if (currentPage == LUNAR) showAnnual()
         }
         binding.monthly.setOnClickListener {
             if(currentPage == ANNUAL) showMonthly()
-        }
+        }*/
         return root
     }
 
@@ -71,19 +78,19 @@ class HolidaysFragment : Fragment() {
     }
 
     private fun showAnnual(){
-        binding.monthly.setBackgroundResource(R.color.white)
-        binding.annual.setBackgroundResource(R.color.Neon)
+        //binding.monthly.setBackgroundResource(R.color.white)
+        //binding.annual.setBackgroundResource(R.color.Neon)
         holidayAdapter.isForAnnualList = true
         holidayAdapter.setHolidays(HolyYear.ofYear(Util.today.year,showEritrean,showTigraian))
-        currentPage = ANNUAL
+        //currentPage = ANNUAL
 
     }
 
     private fun showMonthly(){
         holidayAdapter.setHolidays(HolyMonth(Util.today.year,Util.today.month).getSaints(requireActivity()))
         holidayAdapter.isForAnnualList = false
-        binding.monthly.setBackgroundResource(R.color.Neon)
-        binding.annual.setBackgroundResource(R.color.white)
-        currentPage = LUNAR
+        //binding.monthly.setBackgroundResource(R.color.Neon)
+        //binding.annual.setBackgroundResource(R.color.white)
+        //currentPage = LUNAR
     }
 }

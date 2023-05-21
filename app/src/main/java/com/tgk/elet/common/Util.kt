@@ -80,8 +80,9 @@ object Util {
 
     fun Month.format(): String{
         val m = if(this is MonthLocal) months else geezMonths
-        return "${m[month-1]} $year"
+        return "${m[this.month-1]} $year"
     }
+    fun Month.name():String = if (this is MonthLocal) months[this.month-1] else geezMonths[this.month-1]
 
     // Geez Calendar months asan List
 

@@ -5,45 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tgk.elet.ui.converter.ConverterFragment">
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/switchWidget"
+    <com.tgk.elet.ui.widgets.SwitchView
+        android:id="@+id/switches"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="5dp"
-        android:elevation="0dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <TextView
-                android:id="@+id/gregorian"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:text="@string/from_Gregorian"
-                android:background="@color/white"/>
-
-            <TextView
-                android:id="@+id/geez"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:text="@string/from_geez"
-                android:background="?attr/colorPrimary"/>
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="10dp"
+        app:left_button_text="@string/from_geez"
+        app:right_button_text="@string/from_Gregorian"
+        app:hinted_color="?android:attr/textColorHint"
+        app:highlighted_color="?android:attr/textColorPrimary"/>
 
     <ViewFlipper
         android:id="@+id/switcher"
@@ -55,32 +31,32 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchWidget">
+        app:layout_constraintTop_toBottomOf="@id/switches">
 
         <com.tgk.elet.ui.widgets.DatePicker
             android:id="@+id/geez_picker"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:geezTextSize="14sp"
-            app:indicatorColor="@color/red_ish"
-            app:offsetColor="@color/super_lightGrey"
-            app:insetColor="@color/black"
-            app:selectionColor="@color/super_lightGrey"
+            app:indicatorColor="?android:attr/textColorHighlight"
+            app:selectionColor="?android:attr/textColorHint"
+            app:offsetColor="?android:attr/textColorHint"
+            app:insetColor="?android:attr/textColor"
+            app:weekEndColor="?android:attr/textColorPrimary"
             app:font="@font/abyssinica"
-            app:weekDays="@array/week_days"
-            app:weekEndColor="?attr/colorPrimary"/>
+            app:weekDays="@array/week_days"/>
         <com.tgk.elet.ui.widgets.DatePicker
             android:id ="@+id/gregorian_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:geezTextSize="14sp"
-            app:indicatorColor="@color/red_ish"
-            app:offsetColor="@color/super_lightGrey"
-            app:insetColor="@color/black"
-            app:selectionColor="@color/super_lightGrey"
+            app:indicatorColor="?android:attr/textColorHighlight"
+            app:selectionColor="?android:attr/textColorHint"
+            app:offsetColor="?android:attr/textColorHint"
+            app:insetColor="?android:attr/textColor"
+            app:weekEndColor="?android:attr/textColorPrimary"
             app:font="@font/abyssinica"
-            app:weekDays="@array/week_days"
-            app:weekEndColor="?attr/colorPrimary"/>
+            app:weekDays="@array/week_days"/>
     </ViewFlipper>
     <TextView
         android:id="@+id/selectedDate"
@@ -93,7 +69,7 @@
         android:paddingTop="5dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:background="@color/super_lightGrey"
+        android:background="?android:attr/textColorHint"
         android:gravity="end"
         android:textSize="25sp"
         app:layout_constraintTop_toBottomOf="@id/switcher"/>

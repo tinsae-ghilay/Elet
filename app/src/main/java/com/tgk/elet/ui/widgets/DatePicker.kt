@@ -57,7 +57,7 @@ class DatePicker: CalendarViewDelegator {
         val titleLayout = LinearLayout(context).also {
             it.weightSum =7f
             it.setPadding(10)
-            it.setBackgroundResource(R.color.super_lightGrey)
+            it.setBackgroundColor(offsetColor)
             }
 
         // navigation buttons
@@ -66,7 +66,7 @@ class DatePicker: CalendarViewDelegator {
         // back button
         val goToPreviousMonth = ImageButton(context).also { btn ->
             btn.setImageResource(R.drawable.back)
-            btn.setColorFilter(Color.DKGRAY)
+            btn.setColorFilter(insetColor)
             btn.setBackgroundResource(R.drawable.ripple)
             btn.layoutParams = navButtonParams
             btn.setOnClickListener {
@@ -78,7 +78,7 @@ class DatePicker: CalendarViewDelegator {
             btn.setImageResource(R.drawable.next)
             btn.setBackgroundResource(R.drawable.ripple)
             btn.layoutParams = navButtonParams
-            btn.setColorFilter(Color.DKGRAY)
+            btn.setColorFilter(insetColor)
             btn.setOnClickListener {
                 month.currentItem++
             }
@@ -89,7 +89,7 @@ class DatePicker: CalendarViewDelegator {
             btn.setImageResource(R.drawable.now)
             btn.setBackgroundColor(Color.TRANSPARENT)
             btn.layoutParams = navButtonParams
-            btn.setColorFilter(Color.DKGRAY)
+            btn.setColorFilter(insetColor)
             btn.setBackgroundResource(R.drawable.ripple)
             btn.setOnClickListener {
                 resetToCurrentMonth()
@@ -115,7 +115,7 @@ class DatePicker: CalendarViewDelegator {
         val weekView = WeekDaysView(context).also {
             it.textSize = textSize
             it.typeface = typeface
-            it.setBackgroundResource(R.color.super_lightGrey)
+            //it.setBackgroundResource(R.color.super_lightGrey)
             it.weekEndColor = weekEndColor
             it.weekTextColor = insetColor
             weekDays?.let { days -> it.weekDays = days }

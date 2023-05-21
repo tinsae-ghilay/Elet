@@ -6,45 +6,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.tgk.elet.ui.holidays.HolidaysFragment">
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/toggle"
+
+    <com.tgk.elet.ui.widgets.SwitchView
+        android:id="@+id/switches"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="5dp"
-        android:elevation="0dp"
-        android:layout_margin="5dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <TextView
-                android:id="@+id/annual"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:text="@string/annual"
-                android:background="@color/white"/>
-
-            <TextView
-                android:id="@+id/monthly"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:text="@string/lunar"
-                android:background="?attr/colorPrimary"/>
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="5dp"
+        app:left_button_text="@string/annual"
+        app:right_button_text="@string/lunar"
+        app:hinted_color="?android:attr/textColorHint"
+        app:highlighted_color="?android:attr/textColorPrimary"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/holidays"
         android:layout_width="match_parent"
@@ -53,7 +30,7 @@
         android:clipToPadding="false"
         tools:listitem="@layout/holiday_item"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggle"
+        app:layout_constraintTop_toBottomOf="@+id/switches"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:paddingTop="5dp"
