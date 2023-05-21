@@ -118,7 +118,7 @@ public class BahreHasab extends GeezYear {
     }
     /**
      * @param tewsak = number of days from nineveh to specified holiday.
-     * @return  BaseDate on which a holiday falls
+     * @return  date on which a holiday falls
      * */
     private int calculateDate(int tewsak){ return ((mebajaHamer + tewsak) % 30 == 0)? 30 : (mebajaHamer +tewsak) % 30; }
 
