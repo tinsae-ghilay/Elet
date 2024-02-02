@@ -50,6 +50,7 @@
         <item name="appWidgetBackgroundColor">@color/Neon</item>
         <item name="appWidgetTextColor">@color/white</item>
     </style>
+
     <style name="input_dialog" parent="">
         <item name="cornerSizeTopLeft">10pt</item>
         <item name="cornerSizeTopRight">10pt</item>

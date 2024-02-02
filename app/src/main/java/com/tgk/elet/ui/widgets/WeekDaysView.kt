@@ -60,7 +60,7 @@ class WeekDaysView: View {
         dayPaint.typeface = typeface
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         //super.onDraw(canvas)
         var xAxis: Float
         var yAxis: Float

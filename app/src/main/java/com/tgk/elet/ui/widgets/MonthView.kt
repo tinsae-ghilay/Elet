@@ -116,7 +116,7 @@ open class MonthView : View {
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         var column = 0
         var row = 0
         datePaint.textSize = textSize

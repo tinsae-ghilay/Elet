@@ -4,32 +4,32 @@
         <attr name="appWidgetTextColor" format="color" />
     </declare-styleable>
     <declare-styleable name="SwitchView">
-        <attr name="left_button_text" format="string"/>
-        <attr name="right_button_text" format="string"/>
-        <attr name="highlighted_color" format="color"/>
-        <attr name="hinted_color" format="color"/>
+        <attr name="left_button_text" format="string" />
+        <attr name="right_button_text" format="string" />
+        <attr name="highlighted_color" format="color" />
+        <attr name="hinted_color" format="color" />
     </declare-styleable>
 
     <declare-styleable name="CalendarViewDelegator">
         <!-- show gregorian dates or not -->
-        <attr name="showGregorian" format="boolean"/>
+        <attr name="showGregorian" format="boolean" />
         <!-- color of selected date cell -->
-        <attr name="selectionColor" format="color"/>
+        <attr name="selectionColor" format="color" />
         <!-- color of week end cell -->
-        <attr name="weekEndColor" format="color"/>
+        <attr name="weekEndColor" format="color" />
         <!-- color of offset cell -->
-        <attr name="offsetColor" format="color"/>
+        <attr name="offsetColor" format="color" />
         <!-- color of current month date cell -->
-        <attr name="insetColor" format="color"/>
+        <attr name="insetColor" format="color" />
         <!-- color of current date cell -->
-        <attr name="indicatorColor" format="color"/>
+        <attr name="indicatorColor" format="color" />
         <!-- geez date text color -->
-        <attr name="geezTextSize" format="dimension"/>
+        <attr name="geezTextSize" format="dimension" />
         <!-- gregorian date text color -->
-        <attr name="gregorianTextSize" format="dimension"/>
+        <attr name="gregorianTextSize" format="dimension" />
         <!-- font family -->
-        <attr name="font" format="reference"/>
+        <attr name="font" format="reference" />
         <!-- week days -->
-        <attr name="weekDays" format="reference"/>
+        <attr name="weekDays" format="reference" />
     </declare-styleable>
 </resources>

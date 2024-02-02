@@ -70,15 +70,15 @@ open class CalendarMonthView : MonthView {
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         // vertical lines
         if(showGregorianDates){
             for (d in 0..weeksInAMonth){
-                canvas?.drawLine(0f,d*cellHeight,cellWidth*daysInAWeek,d*cellHeight,grid)
+                canvas.drawLine(0f,d*cellHeight,cellWidth*daysInAWeek,d*cellHeight,grid)
             }
             // horizontal lines
             for (d in 0 .. daysInAWeek){
-                canvas?.drawLine(d*cellWidth,0f,cellWidth*d,cellHeight*weeksInAMonth,grid)
+                canvas.drawLine(d*cellWidth,0f,cellWidth*d,cellHeight*weeksInAMonth,grid)
             }
         }
         super.onDraw(canvas)
