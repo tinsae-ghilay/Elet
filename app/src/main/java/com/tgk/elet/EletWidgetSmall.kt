@@ -82,7 +82,7 @@ internal fun updateAppWidget(
     val views = RemoteViews(context.packageName, R.layout.elet_small)
 
     TODO("add a function in Util, that takes a GeezDate object and returns a day of the week index");
-    views.setTextViewText(R.id.week_day, context.resources.getStringArray(R.array.week_days)[6])
+    views.setTextViewText(R.id.week_day, context.resources.getStringArray(R.array.week_days)[geezDate.dayOfMonth()])
         //context.resources.getStringArray(R.array.week_days)[geezDate.date]);
     views.setTextViewText(R.id.small_geez,"$today  ${context.resources
         .getStringArray(R.array.monthsList)[geezDate.month-1]}, ${geezDate.year}");
