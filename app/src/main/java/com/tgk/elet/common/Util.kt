@@ -125,4 +125,10 @@ object Util {
         else this % 4 == 0;
     }
 
+    // get day of week from date object.
+
+    fun BaseDate.dayOfWeek():Int{
+        return this.julianDay % 7;
+    }
+
 }
