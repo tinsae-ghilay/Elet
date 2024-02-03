@@ -20,7 +20,7 @@ public abstract class BaseDate implements Comparable<BaseDate>{
         if (year < 0) checked += "year - ";
         if (month <= 0) checked += "month - ";
         if (date <= 0) checked += "dayOfMonth -";
-        if (checked.equalsIgnoreCase("")){
+        if (!checked.equalsIgnoreCase("")){
             throw new IllegalArgumentException(checked+" should be greater than 0");
         }
     }
