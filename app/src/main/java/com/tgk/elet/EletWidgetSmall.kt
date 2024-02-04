@@ -7,10 +7,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
-import android.os.Build
-import android.util.Log
 import android.widget.RemoteViews
-import androidx.annotation.RequiresApi
 import com.tgk.Elet.R
 import com.tgk.elet.common.Util.dayOfWeek
 import com.tgk.elet.geezDate.GeezDate
@@ -39,9 +36,9 @@ class EletWidgetSmall : AppWidgetProvider() {
     override fun onEnabled(context: Context) {
         // Enter relevant functionality for when the first widget is created
         FLAG = if (android.os.Build.VERSION.SDK_INT >= 31) {
-            PendingIntent.FLAG_MUTABLE;
+            PendingIntent.FLAG_MUTABLE
         }else{
-            PendingIntent.FLAG_UPDATE_CURRENT;
+            PendingIntent.FLAG_UPDATE_CURRENT
         }
     }
 
@@ -70,13 +67,11 @@ internal fun updateAppWidget(
     appWidgetManager: AppWidgetManager,
     appWidgetId: Int
 ) {
-    var geezDate: GeezDate? = null
-    var dateLocal: DateLocal? = null
 
     //CurrentDate currentDate;
     var calendar: Calendar? = null
-    geezDate = GeezDate.now()
-    dateLocal = DateLocal.fromJdn(geezDate.julianDay)
+    val geezDate = GeezDate.now()
+    val dateLocal = DateLocal.fromJdn(geezDate.julianDay)
 
     // Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.elet_small)
