@@ -79,12 +79,11 @@ internal fun updateAppWidget(
     views.setTextViewText(R.id.week_day, context.resources.getStringArray(R.array.week_days)[geezDate.dayOfWeek()])
         //context.resources.getStringArray(R.array.week_days)[geezDate.date]);
     views.setTextViewText(R.id.small_geez,"${geezDate.date}  ${context.resources
-        .getStringArray(R.array.monthsList)[geezDate.month-1]}, ${geezDate.year}");
+        .getStringArray(R.array.monthsList)[geezDate.month-1]}, ${geezDate.year}")
     views.setTextViewText(R.id.small_gregorian
-        ,"${dateLocal.date} ${context.resources.getStringArray(R.array.months)[dateLocal.month-1]} , ${dateLocal.year}");
+        ,"${dateLocal.date} ${context.resources.getStringArray(R.array.months)[dateLocal.month-1]} , ${dateLocal.year}")
     views.setTextViewText(R.id.day_holiday,
-        context.resources.getStringArray(R.array.daily_events)[geezDate.date]
-    );
+        context.resources.getStringArray(R.array.daily_events)[geezDate.date])
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views)

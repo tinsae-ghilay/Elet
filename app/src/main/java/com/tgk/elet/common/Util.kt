@@ -122,13 +122,13 @@ object Util {
 
     fun Int.isGregorianLeapYear():Boolean {
         return if (this % 100 == 0) this % 400 == 0
-        else this % 4 == 0;
+        else this % 4 == 0
     }
 
     // get day of week from date object.
 
     fun GeezDate.dayOfWeek():Int{
-        return ((this.julianDay+1) % 7).toInt();
+        return ((this.julianDay+1) % 7).toInt()
     }
 
 }
