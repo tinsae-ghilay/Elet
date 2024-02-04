@@ -12,6 +12,7 @@ import android.util.Log
 import android.widget.RemoteViews
 import androidx.annotation.RequiresApi
 import com.tgk.Elet.R
+import com.tgk.elet.common.Util.dayOfWeek
 import com.tgk.elet.geezDate.GeezDate
 import com.tgk.elet.localDate.DateLocal
 
@@ -77,19 +78,17 @@ internal fun updateAppWidget(
     geezDate = GeezDate.now()
     dateLocal = DateLocal.fromJdn(geezDate.julianDay)
 
-    val today: Int = geezDate.date
     // Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.elet_small)
 
-    TODO("add a function in Util, that takes a GeezDate object and returns a day of the week index");
-    views.setTextViewText(R.id.week_day, context.resources.getStringArray(R.array.week_days)[geezDate.dayOfMonth()])
+    views.setTextViewText(R.id.week_day, context.resources.getStringArray(R.array.week_days)[geezDate.dayOfWeek()])
         //context.resources.getStringArray(R.array.week_days)[geezDate.date]);
-    views.setTextViewText(R.id.small_geez,"$today  ${context.resources
+    views.setTextViewText(R.id.small_geez,"${geezDate.date}  ${context.resources
         .getStringArray(R.array.monthsList)[geezDate.month-1]}, ${geezDate.year}");
     views.setTextViewText(R.id.small_gregorian
         ,"${dateLocal.date} ${context.resources.getStringArray(R.array.months)[dateLocal.month-1]} , ${dateLocal.year}");
     views.setTextViewText(R.id.day_holiday,
-        context.resources.getStringArray(R.array.daily_events)[today]
+        context.resources.getStringArray(R.array.daily_events)[geezDate.date]
     );
 
     // Instruct the widget manager to update the widget

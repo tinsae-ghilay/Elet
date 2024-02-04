@@ -128,7 +128,7 @@ object Util {
     // get day of week from date object.
 
     fun GeezDate.dayOfWeek():Int{
-        return this.julianDay % 7;
+        return ((this.julianDay+1) % 7).toInt();
     }
 
 }
