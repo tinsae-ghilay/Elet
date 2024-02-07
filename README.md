@@ -9,8 +9,9 @@ and are in need of the Geez calendar traditionally used in Eritrea and Ethiopia.
 ## Programmung Languages
 
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)## layout
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
+
+## layout
 
 this Calendar is designed with the traditional mobile calendar UI in mind, where scrolling left and right changes months that are displayed on screen
 and the displayed months events are listed below.
