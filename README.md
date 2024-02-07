@@ -6,8 +6,13 @@
 The aim of this project is to make a convenient Geez calendar for people who are not fluent in other languages like Amharic or English 
 and are in need of the Geez calendar traditionally used in Eritrea and Ethiopia.
 
-## Language
-Java and Kotlin.
+## Programmung Languages
+
+> [!Kotlin]
+> by now, most of the source is translated to Kotlin
+
+> [!Java]
+> some Java codes still remain.
 
 ## layout
 
