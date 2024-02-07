@@ -41,7 +41,6 @@
             android:layout_height="0dp"
             android:gravity="end|center_vertical"
             android:layout_weight="1"
-            android:background="@drawable/line"
             android:fontFamily="@font/abyssinica"
             android:textColor="@color/white"/>
     </LinearLayout>
