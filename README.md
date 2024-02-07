@@ -7,7 +7,7 @@ The aim of this project is to make a convenient Geez calendar for people who are
 and are in need of the Geez calendar traditionally used in Eritrea and Ethiopia.
 
 ## Language
-for now #Java, I am using Joda time for converting between Geez and Gregorian Dates.
+Java and Kotlin.
 
 ## layout
 
