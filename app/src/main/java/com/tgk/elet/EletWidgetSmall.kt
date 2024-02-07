@@ -8,12 +8,14 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.widget.RemoteViews
 import com.tgk.Elet.R
 import com.tgk.elet.common.Util.dayOfWeek
 import com.tgk.elet.geezDate.GeezDate
 import com.tgk.elet.localDate.DateLocal
 import java.util.Calendar
+import java.util.TimeZone
 
 
 /**
@@ -69,14 +71,13 @@ class EletWidgetSmall : AppWidgetProvider() {
 
         // Set the alarm to start at approximately 0:00 a.m.
         if (calendar == null) {
-            calendar = Calendar.getInstance()
-        } else {
-            calendar?.timeInMillis = System.currentTimeMillis()
+            calendar = Calendar.getInstance(TimeZone.getDefault())
+            Log.d("- ELET -"," Calendar updated in Planer")
         }
         calendar?.add(Calendar.DAY_OF_MONTH, 1) //  set to Next day.
-        calendar?.set(Calendar.HOUR_OF_DAY, 6)
+        calendar?.set(Calendar.HOUR_OF_DAY, 0)
         calendar?.set(Calendar.MINUTE, 0)
-        calendar?.set(Calendar.SECOND, 10)
+        calendar?.set(Calendar.SECOND, 1)
 
         //***below two lines are for test only***//
         /*int interval=60*1000*10; // must be at least 10 minutes because of google's(Android's) restrictions
@@ -112,7 +113,9 @@ internal fun updateAppWidget(
 ) {
 
     //CurrentDate currentDate;
-    val geezDate = GeezDate.now()
+    val c:Calendar = Calendar.getInstance(TimeZone.getDefault());
+    val geezDate = GeezDate.from(c.get(Calendar.YEAR),c.get(Calendar.MONTH)+1,c.get(Calendar.DAY_OF_MONTH))
+    Log.d("- ELET -"," Calendar updated in Planer")
     val dateLocal = DateLocal.fromJdn(geezDate.julianDay)
 
     // Construct the RemoteViews object
