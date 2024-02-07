@@ -11,7 +11,8 @@ and are in need of the Geez calendar traditionally used in Eritrea and Ethiopia.
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 
-[x] Mostly Kotlin
+- [x] Mostly Kotlin
+- [ ] Still som Java remaining
 
 ## IDE
 
