@@ -113,7 +113,7 @@ internal fun updateAppWidget(
 ) {
 
     //CurrentDate currentDate;
-    val c:Calendar = Calendar.getInstance(TimeZone.getDefault());
+    val c:Calendar = Calendar.getInstance(TimeZone.getDefault())
     val geezDate = GeezDate.from(c.get(Calendar.YEAR),c.get(Calendar.MONTH)+1,c.get(Calendar.DAY_OF_MONTH))
     Log.d("- ELET -"," Calendar updated in Planer")
     val dateLocal = DateLocal.fromJdn(geezDate.julianDay)
