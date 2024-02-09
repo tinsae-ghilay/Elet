@@ -24,7 +24,6 @@ import java.util.TimeZone
 
 const val UPDATE = "android.appwidget.action.APPWIDGET_UPDATE"
 const val BOOTED = "android.intent.action.BOOT_COMPLETED"
-var FLAG = 0
 class EletWidgetSmall : AppWidgetProvider() {
     var calendar: Calendar? = null
     override fun onUpdate(
@@ -40,11 +39,6 @@ class EletWidgetSmall : AppWidgetProvider() {
 
     override fun onEnabled(context: Context) {
         // Enter relevant functionality for when the first widget is created
-        FLAG = if (Build.VERSION.SDK_INT >= 31) {
-            PendingIntent.FLAG_MUTABLE
-        }else{
-            PendingIntent.FLAG_UPDATE_CURRENT
-        }
     }
 
     override fun onDisabled(context: Context) {
@@ -67,7 +61,12 @@ class EletWidgetSmall : AppWidgetProvider() {
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, EletWidgetSmall::class.java)
         intent.setAction(UPDATE)
-        val alarmIntent = PendingIntent.getBroadcast(context, 2, intent, FLAG)
+        val flag = if (Build.VERSION.SDK_INT >= 31) {
+            PendingIntent.FLAG_IMMUTABLE
+        }else{
+            PendingIntent.FLAG_UPDATE_CURRENT
+        }
+        val alarmIntent = PendingIntent.getBroadcast(context, 2, intent, flag)
 
         // Set the alarm to start at approximately 0:00 a.m.
         if (calendar == null) {

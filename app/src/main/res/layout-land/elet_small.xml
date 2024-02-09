@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:fontFamily="sans-serif"
         android:paddingStart="6dp"
+        android:paddingEnd="6dp"
         android:format12Hour="hh:mm"
         android:textSize="40sp"
         android:gravity="center_vertical"
@@ -28,6 +29,14 @@
         android:paddingEnd="6dp"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/week_day"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="end|center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/abyssinica"
+            android:textColor="@color/white"/>
+        <TextView
             android:id="@+id/day_holiday"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -35,15 +44,6 @@
             android:layout_weight="1"
             android:gravity="end|center_vertical"
             android:textColor="@color/red_ish"/>
-        <TextView
-            android:id="@+id/week_day"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="end|center_vertical"
-            android:layout_weight="1"
-            android:background="@drawable/line"
-            android:fontFamily="@font/abyssinica"
-            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout
