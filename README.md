@@ -6,8 +6,17 @@
 The aim of this project is to make a convenient Geez calendar for people who are not fluent in other languages like Amharic or English 
 and are in need of the Geez calendar traditionally used in Eritrea and Ethiopia.
 
-## Language
-for now #Java, I am using Joda time for converting between Geez and Gregorian Dates.
+## Programmung Languages
+
+
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
+
+- [x] Mostly Kotlin
+- [ ] Still som Java remaining
+
+## IDE
+
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
 
 ## layout
 
