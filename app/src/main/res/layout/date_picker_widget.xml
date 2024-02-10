@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.tgk.elet.ui.widgets.DatePicker
+        android:id="@+id/picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:indicatorColor="?android:attr/textColorHighlight"
+        app:selectionColor="?android:attr/textColorHint"
+        app:offsetColor="?android:attr/textColorHint"
+        app:insetColor="?android:attr/textColor"
+        app:weekEndColor="?android:attr/textColorPrimary"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/picker"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/done"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

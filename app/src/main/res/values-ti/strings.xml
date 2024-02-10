@@ -175,4 +175,11 @@
     <string name="bahti">"ዝበርቀሉ ማዓልቲ : "</string>
     <string name="change_year">ዓመት ቀይር</string>
     <string name="ad">ዓ.ም</string>
+    <string name="day">Day</string>
+    <string name="select_date">Select date</string>
+    <string name="day_short">dd</string>
+    <string name="year_short">yyyy</string>
+    <string name="dummy_date">may 24, 1991</string>
+    <string name="show_date_picker">show date picker</string>
+    <string name="cancel">cancel</string>
 </resources>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="month">month</string>
-    <string name="bahti">Starts on:</string>
-    <string name="change_year">change year</string>
     <string name="day">Day</string>
     <string name="select_date">Select date</string>
     <string name="day_short">dd</string>

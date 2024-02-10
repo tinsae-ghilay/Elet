@@ -182,4 +182,12 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+    <string name="day">Day</string>
+    <string name="select_date">Select date</string>
+    <string name="day_short">dd</string>
+    <string name="month_short">mm</string>
+    <string name="year_short">yyyy</string>
+    <string name="dummy_date">may 24, 1991</string>
+    <string name="show_date_picker">show date picker</string>
+    <string name="cancel">cancel</string>
 </resources>

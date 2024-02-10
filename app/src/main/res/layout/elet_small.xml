@@ -1,5 +1,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/small_widget"
@@ -40,10 +41,10 @@
         android:layout_alignBottom="@id/digital_clock"
         android:gravity="center"
         android:padding="10dp"
-        android:text="monday"
         android:fontFamily="@font/abyssinica"
         android:textColor="@color/white"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        tools:ignore="RelativeOverlap" />
 
     <LinearLayout
         android:id="@+id/dates"
@@ -62,7 +63,6 @@
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
             android:gravity="center_vertical"
-            android:text="24 may, 1991"
             android:textColor="?attr/appWidgetTextColor"
             android:fontFamily="@font/abyssinica"/>
         <TextView
@@ -72,7 +72,6 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginEnd="8dp"
-            android:text="24 may, 1991"
             android:textColor="?attr/appWidgetTextColor"
             android:fontFamily="@font/abyssinica"/>
     </LinearLayout>

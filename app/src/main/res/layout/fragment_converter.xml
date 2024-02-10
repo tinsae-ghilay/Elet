@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context="com.tgk.elet.ui.converter.ConverterFragment">
     <com.tgk.elet.ui.widgets.SwitchView
         android:id="@+id/switches"
@@ -15,62 +17,94 @@
         app:strokeColor="?attr/colorPrimary"
         app:strokeWidth="1dp"
         app:cardCornerRadius="5dp"
-        android:layout_margin="10dp"
         app:left_button_text="@string/from_geez"
         app:right_button_text="@string/from_Gregorian"
         app:hinted_color="?android:attr/textColorHint"
         app:highlighted_color="?android:attr/textColorPrimary"/>
-
-    <ViewFlipper
-        android:id="@+id/switcher"
+    <RelativeLayout
+        android:id="@+id/inputs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:clipChildren="false"
-        android:layout_marginTop="10dp"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toBottomOf="@id/switches"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switches">
-
-        <com.tgk.elet.ui.widgets.DatePicker
-            android:id="@+id/geez_picker"
-            android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/date_input"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:geezTextSize="14sp"
-            app:indicatorColor="?android:attr/textColorHighlight"
-            app:selectionColor="?android:attr/textColorHint"
-            app:offsetColor="?android:attr/textColorHint"
-            app:insetColor="?android:attr/textColor"
-            app:weekEndColor="?android:attr/textColorPrimary"
-            app:font="@font/abyssinica"
-            app:weekDays="@array/week_days"/>
-        <com.tgk.elet.ui.widgets.DatePicker
-            android:id ="@+id/gregorian_picker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:geezTextSize="14sp"
-            app:indicatorColor="?android:attr/textColorHighlight"
-            app:selectionColor="?android:attr/textColorHint"
-            app:offsetColor="?android:attr/textColorHint"
-            app:insetColor="?android:attr/textColor"
-            app:weekEndColor="?android:attr/textColorPrimary"
-            app:font="@font/abyssinica"
-            app:weekDays="@array/week_days"/>
-    </ViewFlipper>
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:text="@string/select_date"
+            android:layout_toStartOf="@+id/i_date"/>
+        <EditText
+            android:id="@+id/i_date"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/i_moth"
+            android:layout_margin="3dp"
+            android:inputType="date"
+            android:autofillHints="24"
+            android:hint="@string/day_short"
+            android:gravity="center_horizontal"/>
+        <EditText
+            android:id="@+id/i_moth"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/i_year"
+            android:layout_margin="3dp"
+            android:inputType="date"
+            android:gravity="center_horizontal"
+            android:autofillHints="5"
+            android:hint="@string/month_short"/>
+        <EditText
+            android:id="@+id/i_year"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:hint="@string/year_short"
+            android:inputType="date"
+            android:layout_toStartOf="@+id/show_dialog"
+            android:gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:autofillHints="1991"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageButton
+            android:id="@+id/show_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:src="@drawable/calendar"
+            android:contentDescription="@string/show_date_picker" />
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/selectedDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="10dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
+        android:padding="5dp"
         android:background="?android:attr/textColorHint"
         android:gravity="end"
+        android:text="@string/dummy_date"
         android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@id/switcher"/>
+        app:layout_constraintTop_toBottomOf="@id/inputs"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/holiday_item"
+        tools:itemCount="7"
+        app:layout_constraintTop_toBottomOf="@id/selectedDate"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
