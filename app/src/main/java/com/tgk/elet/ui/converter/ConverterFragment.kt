@@ -44,6 +44,7 @@ class ConverterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+       //val converterViewModel:ConverterViewModel by viewModels();
         val converterViewModel by activityViewModels<ConverterViewModel>()
 
         val cViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
