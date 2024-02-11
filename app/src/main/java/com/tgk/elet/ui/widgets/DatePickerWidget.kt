@@ -18,6 +18,8 @@ class DatePickerWidget(private val what: Boolean,
                        private val cal: List<Month>?)
     : BottomSheetDialogFragment() {
 
+       // 4 2morrow
+       //private val sharedViewModel: YourViewModel by viewModels(ownerProducer = { requireParentFragment() })
         val vModel:ConverterViewModel by  activityViewModels <ConverterViewModel>()
 
     override fun onCreateView(
