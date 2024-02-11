@@ -9,9 +9,6 @@ import java.util.ArrayList;
  */
 public class BahreHasab extends GeezYear {
     public static final int EPOCH = 5500;// Constants
-    private final int TINTE_METQIE = 19, TINTE_ABEQTIE = 11, GREAT_FAST = 14, MOUNT_OF_OLIVES = 41;
-    private final int PALM_SUNDAY = 62, GOOD_FRIDAY = 67, EASTER = 69, CONGRESS_OF_THE_SAGES = 93;
-    private final int ASCENSION = 108, PARACLETE = 118, FAST_OF_APOSTLES = 119, FAST_OF_SALVATION = 121;
     private final int negar, dayOfNegarit, wember, mebajaHamer;
     private final boolean startsFromBahti, mebajaHamerOverFlows;
     /**
@@ -19,6 +16,7 @@ public class BahreHasab extends GeezYear {
      */
     public BahreHasab(int year){
         super(year);
+        int TINTE_METQIE = 19;
         int MEDEB = getAmeteAlem() % TINTE_METQIE;
         this.wember = (MEDEB != 0) ? MEDEB - 1 : 18;
         this.negar =(wember * TINTE_METQIE) % 30;
@@ -34,7 +32,9 @@ public class BahreHasab extends GeezYear {
     /**
      * @return date of Abeqtie of the year
      */
-    int getAbeqtie(){ return (wember * TINTE_ABEQTIE) % 30; }
+    int getAbeqtie(){
+        int TINTE_ABEQTIE = 11;
+        return (wember * TINTE_ABEQTIE) % 30; }
 
     /**
      * @return Holiday object of Metqie / Negarit
@@ -129,6 +129,16 @@ public class BahreHasab extends GeezYear {
      * @see HolyDay
      */
     public HolyDay[] ofYear(){
+        int GREAT_FAST = 14;
+        int MOUNT_OF_OLIVES = 41;
+        int PALM_SUNDAY = 62;
+        int GOOD_FRIDAY = 67;
+        int EASTER = 69;
+        int CONGRESS_OF_THE_SAGES = 93;
+        int ASCENSION = 108;
+        int PARACLETE = 118;
+        int FAST_OF_APOSTLES = 119;
+        int FAST_OF_SALVATION = 121;
         return new HolyDay[]{getMetqie(),getNineveh(),getHoliday(GREAT_FAST,5)
                 ,getHoliday(MOUNT_OF_OLIVES,6),getHoliday(PALM_SUNDAY,7)
                 ,getHoliday(GOOD_FRIDAY,8), getHoliday(EASTER, 9)

@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tgk.Elet.databinding.DatePickerWidgetBinding
+import com.tgk.elet.common.Util.convert
 import com.tgk.elet.geezDate.GeezDate
 import com.tgk.elet.localDate.DateLocal
 import com.tgk.elet.temporal.BaseDate
@@ -18,9 +20,8 @@ class DatePickerWidget(private val what: Boolean,
                        private val cal: List<Month>?)
     : BottomSheetDialogFragment() {
 
-       // 4 2morrow
-       //private val sharedViewModel: YourViewModel by viewModels(ownerProducer = { requireParentFragment() })
-        val vModel:ConverterViewModel by  activityViewModels <ConverterViewModel>()
+
+       private val vModel: ConverterViewModel by viewModels(ownerProducer = {requireParentFragment()})
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,11 +41,7 @@ class DatePickerWidget(private val what: Boolean,
 
     private val listener:OnDateSelectedListener = object: OnDateSelectedListener{
         override fun selectedDate(date: BaseDate) {
-            if (date is GeezDate){
-                vModel.setConverted(DateLocal.fromJdn(date.julianDay))
-            }else {
-                vModel.setConverted(GeezDate.from(date.year,date.month,date.date))
-            }
+            vModel.setSelected(date)
         }
     }
 }

@@ -10,4 +10,5 @@
     <string name="dummy_date">may 24, 1991</string>
     <string name="show_date_picker">show date picker</string>
     <string name="cancel">cancel</string>
+    <string name="converted_date">Converted date</string>
 </resources>

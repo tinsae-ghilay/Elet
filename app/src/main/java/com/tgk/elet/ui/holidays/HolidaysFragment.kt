@@ -24,13 +24,6 @@ class HolidaysFragment : Fragment() {
 
     private var _binding: FragmentHolidaysBinding? = null
 
-    private lateinit var currentPage:String
-
-    companion object {
-        const val ANNUAL ="annual"
-        const val LUNAR ="lunar"
-    }
-
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -41,12 +34,8 @@ class HolidaysFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // we have to look for preferences whenever wo navigate back here
+        // we have to look for preferences whenever we navigate back here
         requireActivity().setPreferenceValues()
-
-        val cViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
-        cViewModel.setFragmentTitle(requireContext().getString(R.string.annual))
-        cViewModel.setShowNavButtons(View.GONE)
 
         _binding = FragmentHolidaysBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -62,13 +51,6 @@ class HolidaysFragment : Fragment() {
                 else showMonthly()
             }
         }
-        //showAnnual()
-        /*binding.annual.setOnClickListener {
-            if (currentPage == LUNAR) showAnnual()
-        }
-        binding.monthly.setOnClickListener {
-            if(currentPage == ANNUAL) showMonthly()
-        }*/
         return root
     }
 
@@ -78,19 +60,13 @@ class HolidaysFragment : Fragment() {
     }
 
     private fun showAnnual(){
-        //binding.monthly.setBackgroundResource(R.color.white)
-        //binding.annual.setBackgroundResource(R.color.Neon)
         holidayAdapter.isForAnnualList = true
         holidayAdapter.setHolidays(HolyYear.ofYear(Util.today.year,showEritrean,showTigraian))
-        //currentPage = ANNUAL
 
     }
 
     private fun showMonthly(){
         holidayAdapter.setHolidays(HolyMonth(Util.today.year,Util.today.month).getSaints(requireActivity()))
         holidayAdapter.isForAnnualList = false
-        //binding.monthly.setBackgroundResource(R.color.Neon)
-        //binding.annual.setBackgroundResource(R.color.white)
-        //currentPage = LUNAR
     }
 }

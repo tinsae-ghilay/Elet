@@ -15,6 +15,8 @@
         app:selectionColor="?android:attr/textColorHint"
         app:offsetColor="?android:attr/textColorHint"
         app:insetColor="?android:attr/textColor"
+        app:weekDays="@array/week_days"
+        app:font="@font/abyssinica"
         app:weekEndColor="?android:attr/textColorPrimary"/>
     <RelativeLayout
         android:layout_width="wrap_content"

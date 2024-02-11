@@ -186,4 +186,7 @@
     <string name="dummy_date">may 24, 1991</string>
     <string name="show_date_picker">show date picker</string>
     <string name="cancel">cancel</string>
+    <string name="converted_date">Converted date</string>
+    <string name="month_short">mm</string>
+    <string name="app_widget_description">A widget for Elet App, displaying date in geez and gregorian</string>
 </resources>

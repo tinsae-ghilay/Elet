@@ -11,12 +11,13 @@ import com.tgk.elet.geezDate.*
 import com.tgk.elet.localDate.DateLocal
 import com.tgk.elet.localDate.MonthLocal
 import com.tgk.elet.temporal.Month
+import com.tgk.elet.temporal.TemporalField
 
 object Util {
     // 20 years * 13 months in a year for geez calendar
-    const val SPAN = 520
+    private const val SPAN = 520
     // 20 years * 12 months in a year for Gregorian calendar
-    const val SPAN_LOCAL = 480
+    private const val SPAN_LOCAL = 480
 
     val today: GeezDate = GeezDate.now()
     val thisDay: DateLocal = DateLocal.now()
@@ -29,7 +30,7 @@ object Util {
     private var _apostles = emptyArray<String>()
     //******************************
     val months get() = _months
-    val geezMonths get() = _geez_months
+    private val geezMonths get() = _geez_months
     val weekDays get() = _week_Days
     val apostles get() = _apostles
 
@@ -129,6 +130,13 @@ object Util {
 
     fun GeezDate.dayOfWeek():Int{
         return ((this.julianDay+1) % 7).toInt()
+    }
+    fun BaseDate.convert():BaseDate{
+        return if (this is GeezDate){
+            DateLocal.fromJdn(this.julianDay)
+        }else {
+            GeezDate.from(this.year,this.month,this.date)
+        }
     }
 
 }

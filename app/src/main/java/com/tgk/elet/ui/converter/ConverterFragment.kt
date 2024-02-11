@@ -1,30 +1,20 @@
 package com.tgk.elet.ui.converter
 
-import android.app.Activity
-import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.tgk.Elet.R
+import androidx.fragment.app.viewModels
 import com.tgk.Elet.databinding.FragmentConverterBinding
-import com.tgk.elet.ui.widgets.OnDateSelectedListener
-import com.tgk.elet.common.CommonViewModel
 import com.tgk.elet.common.Util
+import com.tgk.elet.common.Util.convert
 import com.tgk.elet.common.Util.format
-import com.tgk.elet.geezDate.GeezDate
 import com.tgk.elet.localDate.DateFormat
-import com.tgk.elet.localDate.DateLocal
 import com.tgk.elet.temporal.BaseDate
 import com.tgk.elet.temporal.Month
-import com.tgk.elet.ui.widgets.DatePicker
 import com.tgk.elet.ui.widgets.DatePickerWidget
 import com.tgk.elet.ui.widgets.SwitchView
 
@@ -38,22 +28,18 @@ class ConverterFragment : Fragment() {
     private var months: List<Month>? = null
     private var gmonths: List<Month>? = null
     private var target:SwitchView.SwitchState = SwitchView.SwitchState.LEFT
+    private var selectedDate:BaseDate = Util.today
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-       // 4 2morrow
-       //val converterViewModel:ConverterViewModel by viewModels();
-        val converterViewModel by activityViewModels<ConverterViewModel>()
-
-        val cViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
-        cViewModel.setFragmentTitle(requireContext().getString(R.string.convert))
-        cViewModel.setShowNavButtons(View.GONE)
+        // converter View model
+        val converterViewModel:ConverterViewModel by viewModels()
 
         _binding = FragmentConverterBinding.inflate(inflater, container, false)
-        converterViewModel.setConverted(Util.thisDay)
+        converterViewModel.setSelected(selectedDate)
         //binding.selectedDate.text =Util.thisDay.format(DateFormat.MONTH_NAMED)
 
         binding.showDialog.setOnClickListener(onClick)
@@ -63,30 +49,34 @@ class ConverterFragment : Fragment() {
         converterViewModel.gregorianCalendar.observe(viewLifecycleOwner){
             gmonths = it
         }
-        converterViewModel.converted.observe(viewLifecycleOwner){
+
+        converterViewModel.selected.observe(viewLifecycleOwner){
+            selectedDate = it
             binding.selectedDate.text = it.format(DateFormat.MONTH_NAMED)
+        }
+
+        converterViewModel.converted.observe(viewLifecycleOwner){
+            binding.convertedDate.text = it.format(DateFormat.MONTH_NAMED)
             Log.d("Fragment:","Got $it as selected date to _______________!")
         }
-        binding.switches.onSwitchAction = onSwitchAction
+        binding.switches.onSwitchAction = object: SwitchView.OnSwitchAction {
+            override fun switchTo(state: SwitchView.SwitchState) {
+                target = state
+                converterViewModel.setSelected(selectedDate.convert())
+            }
+        }
 
         return binding.root
     }
 
     private val onClick = View.OnClickListener {
-        Toast.makeText(activity," trigger clicked",Toast.LENGTH_SHORT).show();
-        val  fr = if(target == SwitchView.SwitchState.LEFT){
+
+        val  fr = if(target == SwitchView.SwitchState.LEFT){ // selected date is Geez
             DatePickerWidget(true,months)
         }else{
             DatePickerWidget(true,gmonths)
         }
-        fr.show(parentFragmentManager,"picker")
-    }
-
-    private val onSwitchAction: SwitchView.OnSwitchAction = object: SwitchView.OnSwitchAction{
-        override fun switchTo(state: SwitchView.SwitchState) {
-            target = state
-        }
-
+        fr.show(childFragmentManager,"picker")
     }
 
 
@@ -111,3 +101,4 @@ class ConverterFragment : Fragment() {
         }
     }*/
 }
+

@@ -171,15 +171,18 @@
     <string name="show_gregorian">ናይ ፈረጂ ዕለታት ውን ኣርኢ</string>
     <string name="widget_enable" >መስኮት ዕለት ኣኽእል</string>
     <string name="widget_text">ኣብዞም ዝስዕቡ መድረኻት ርኢቶን ሚዛንን ለግሱ/ሳ/ልና</string>
-    <string name="month">month</string>
+    <string name="month">ወርሒ</string>
     <string name="bahti">"ዝበርቀሉ ማዓልቲ : "</string>
     <string name="change_year">ዓመት ቀይር</string>
     <string name="ad">ዓ.ም</string>
-    <string name="day">Day</string>
-    <string name="select_date">Select date</string>
-    <string name="day_short">dd</string>
-    <string name="year_short">yyyy</string>
-    <string name="dummy_date">may 24, 1991</string>
-    <string name="show_date_picker">show date picker</string>
-    <string name="cancel">cancel</string>
+    <string name="day">መዓልቲ</string>
+    <string name="select_date">ዕለት ምረጽ</string>
+    <string name="day_short">መዓ</string>
+    <string name="year_short">ዓመት</string>
+    <string name="dummy_date">ግንቦት 24, 1991</string>
+    <string name="show_date_picker">መምረጺ ዕለት አርኢ</string>
+    <string name="cancel">ሰርዝ</string>
+    <string name="converted_date">ዝተቐየረ ዕለት</string>
+    <string name="month_short">ወር</string>
+    <string name="app_widget_description">ጥቕዒ ናይ ዕ ለት ፣ ብግእዝን ፈረንጂን ዕለት የርኢ።</string>
 </resources>

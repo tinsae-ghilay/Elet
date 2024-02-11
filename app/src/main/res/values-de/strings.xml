@@ -171,15 +171,18 @@
     <string name="show_gregorian">Mit Gregorisch Datum</string>
     <string name="widget_enable">Widget Aktivieren</string>
     <string name="widget_text">Bitte bewerten, liken, teilen Sie uns auf… </string>
-    <string name="month">month</string>
+    <string name="month">monat</string>
     <string name="bahti">"Erste Tag: "</string>
     <string name="change_year">Jahre ändern</string>
     <string name="ad">AD</string>
-    <string name="day">Day</string>
-    <string name="select_date">Select date</string>
+    <string name="day">Tag</string>
+    <string name="select_date">Datum wählen</string>
     <string name="day_short">dd</string>
     <string name="year_short">yyyy</string>
-    <string name="dummy_date">may 24, 1991</string>
-    <string name="show_date_picker">show date picker</string>
-    <string name="cancel">cancel</string>
+    <string name="dummy_date">Mai 24, 1991</string>
+    <string name="show_date_picker">Datumsauswahl anzeigen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="converted_date">Konvertierte Datum</string>
+    <string name="month_short">mm</string>
+    <string name="app_widget_description">Ein Widget für die Elet-App, das das Datum in Geez und Gregorianisch anzeigt.</string>
 </resources>

@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.setPadding
 import com.tgk.Elet.R
+import com.tgk.elet.common.Util
 import com.tgk.elet.common.Util.format
 import com.tgk.elet.localDate.DateLocal
 import com.tgk.elet.temporal.Month
@@ -149,7 +150,9 @@ class DatePicker: CalendarViewDelegator {
             view.selectorColor = selectorColor
 
             if (!isGeezPicker){
-                view.today = DateLocal.now()
+                view.today = Util.thisDay
+            }else{
+                view.today = Util.today
             }
             view.layoutParams = param
 

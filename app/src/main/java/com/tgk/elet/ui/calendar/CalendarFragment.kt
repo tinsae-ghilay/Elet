@@ -50,10 +50,6 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
 
         // we have to look for preferences whenever wo navigate back here
         requireActivity().setPreferenceValues()
-        // common view model
-        val cViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
-        cViewModel.setShowNavButtons(View.VISIBLE)
-        //*** end common view model
 
         _binding = FragmentCalendarBinding.inflate(inflater, container, false)
 
