@@ -12,7 +12,9 @@ import android.util.Log
 import android.widget.RemoteViews
 import com.tgk.Elet.R
 import com.tgk.elet.common.Util.dayOfWeek
+import com.tgk.elet.common.Util.format
 import com.tgk.elet.geezDate.GeezDate
+import com.tgk.elet.localDate.DateFormat
 import com.tgk.elet.localDate.DateLocal
 import java.util.Calendar
 import java.util.TimeZone
@@ -111,21 +113,23 @@ internal fun updateAppWidget(
     appWidgetId: Int
 ) {
 
-    //CurrentDate currentDate;
-    val c:Calendar = Calendar.getInstance(TimeZone.getDefault())
-    val geezDate = GeezDate.from(c.get(Calendar.YEAR),c.get(Calendar.MONTH)+1,c.get(Calendar.DAY_OF_MONTH))
-    Log.d("- ELET -"," Calendar updated in Planer")
+    // current geez date
+    //val c:Calendar = Calendar.getInstance(TimeZone.getDefault())
+    // TODO(widget fails to update if app not open first after install)
+    val geezDate = GeezDate.now()//from(c.get(Calendar.YEAR),c.get(Calendar.MONTH)+1,c.get(Calendar.DAY_OF_MONTH))
+    // convert Geez Date to Gregorian too
     val dateLocal = DateLocal.fromJdn(geezDate.julianDay)
-
-    // Construct the RemoteViews object
+    // Views
     val views = RemoteViews(context.packageName, R.layout.elet_small)
 
+    // Day of the week eg. monday.
     views.setTextViewText(R.id.week_day, context.resources.getStringArray(R.array.week_days)[geezDate.dayOfWeek()])
-        //context.resources.getStringArray(R.array.week_days)[geezDate.date]);
-    views.setTextViewText(R.id.small_geez,"${geezDate.date}  ${context.resources
-        .getStringArray(R.array.monthsList)[geezDate.month-1]}, ${geezDate.year}")
-    views.setTextViewText(R.id.small_gregorian
-        ,"${dateLocal.date} ${context.resources.getStringArray(R.array.months)[dateLocal.month-1]} , ${dateLocal.year}")
+    //Geez date text
+    views.setTextViewText(R.id.small_geez,geezDate.format(DateFormat.MONTH_NAMED))//"${geezDate.date}  ${context.resources
+        //.getStringArray(R.array.monthsList)[geezDate.month-1]}, ${geezDate.year}")
+    // Gregorian date text
+    views.setTextViewText(R.id.small_gregorian, dateLocal.format(DateFormat.MONTH_NAMED))
+        //,"${dateLocal.date} ${context.resources.getStringArray(R.array.months)[dateLocal.month-1]} , ${dateLocal.year}")
     views.setTextViewText(R.id.day_holiday,
         context.resources.getStringArray(R.array.daily_events)[geezDate.date])
 

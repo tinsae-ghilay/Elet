@@ -80,7 +80,7 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
         }
 
         binding.fab.setOnClickListener {
-            focusedMonth?.let { showSnack("event will be added for ") }
+            focusedMonth?.let { showSnack("event will be added for ${month.selectedDate?.format(DateFormat.MONTH_NAMED)}") }
         }
 
         return binding.root
@@ -91,6 +91,14 @@ class CalendarFragment : Fragment(), CalendarViewDelegator.OnMonthChangedListene
         _binding = null
         snackBar = null
     }
+
+    // a temporary solution so that date doesn't get stuck on previous day if app is not closed.
+    // have to find a way to use widget to sent intent to this fragment to update date.
+    override fun onResume() {
+        super.onResume()
+        month.invalidate()
+    }
+
 
     private fun showSnack(message:String){
         if (snackBar == null){

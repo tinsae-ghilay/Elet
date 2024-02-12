@@ -15,13 +15,17 @@ import com.tgk.elet.ui.widgets.Unit.sp
 import com.tgk.elet.temporal.BaseDate
 import com.tgk.elet.temporal.Month
 
-/**
- * CalendarViewDelegator.
+/***
+ * A linearLayout that contains ViewPager for monthView
+ * and navigation buttons
+ * @CalendarViewDelegator.
  * Extends LinearLayout
  * @see LinearLayout
+ * @see MonthView
+ * @see MonthAdapter
  * @author Tinsae ghilay
  * @since March 19,2023 Gregorian / March 10, 2015 Geez Calendar
- */
+ ***/
 
 open class CalendarViewDelegator: LinearLayout {
 
@@ -29,16 +33,23 @@ open class CalendarViewDelegator: LinearLayout {
     protected var onMonthChangeListener: OnMonthChangedListener? = null
 
     // Text size shouldn't be too small or too big
-    private val maxTextSize = 20.sp
-    private val minTextSize = 10.sp
+    private val maxTextSize = 20.sp // maximum text size
+    private val minTextSize = 10.sp // minimum text size
     // attributes that we can set in xml
     var textSize = 18.sp
+    // Week days depending on locale
     protected var weekDays:Array<String>? = null
+    // text color for weekends
     var weekEndColor: Int = Color.argb(255,37,150,190)
+    // text color for days of current month
     var insetColor: Int = Color.DKGRAY
+    // text color for days of previous and next month
     var offsetColor: Int = Color.LTGRAY
+    // color to indicate current date
     var indicatorColor: Int = Color.argb(255,255,67,11)
+    // color to indicate selected date / clicked cell
     var selectorColor: Int = Color.LTGRAY
+    // font, if not set, it defaults
     var typeface :Typeface? = Typeface.DEFAULT
 
     var onDateSelectedListener: OnDateSelectedListener? = null
@@ -101,10 +112,10 @@ open class CalendarViewDelegator: LinearLayout {
     }
     open fun monthScrolled(month:Month?){}
 
-    /**
+    /***
      * picked date listener from CalendarViewAdapter gets us Month index in adapter
      * selected date from month.
-     */
+     ***/
     protected val pickedDateListener = object : MonthAdapter.OnDatePicked {
         override fun datePicked(date: BaseDate, position: Int) {
             if (selectedDate != date){
@@ -122,21 +133,21 @@ open class CalendarViewDelegator: LinearLayout {
         }
     }
 
-    /**
+    /***
      * font from attrs
      * if it is not set, we will take the default font
-     */
+     ***/
     private fun delegateTypeFace(int: Int): Typeface?{
         return if (int==0) Typeface.DEFAULT
         else ResourcesCompat.getFont(context,int)
     }
 
-    /**
+    /***
      * text size should not exceed a certain size to avoid layout overflow / overlap
      * if text size is bigger than maximum suggested text size, we set it to maximum
      * if size is smaller than suggested minimum text size, we set it to minimum
      * else we set it with given attribute
-     */
+     ***/
     private fun delegateTextSize(providedTextSize: Float): Float {
 
         return if (providedTextSize in minTextSize .. maxTextSize ) providedTextSize
@@ -144,17 +155,17 @@ open class CalendarViewDelegator: LinearLayout {
         else minTextSize
     }
 
-    /**
+    /***
      * we can set an array of days
      * we will assume array will always have 7 items and
      * no more no less, so won't check for that here
-     */
+     ***/
     private fun delegateWeekDays(id: Int){
         if (id != 0) weekDays = resources.getStringArray(id)
     }
-    /**
+    /***
      * interface to notify parent when month is changed
-     */
+     ***/
     interface OnMonthChangedListener{
         fun onMothChanged(month: Month?)
     }
@@ -163,6 +174,9 @@ open class CalendarViewDelegator: LinearLayout {
         this.onMonthChangeListener = listener
     }
 
+    /***
+     * scrolls calendar to the current month
+     ***/
     protected open fun resetToCurrentMonth(){
         months?.let {
             month.setCurrentItem((it.size.div(2)),false)
