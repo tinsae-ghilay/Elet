@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         pref.registerOnSharedPreferenceChangeListener (prefListener)
     }
 
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+    }
+
     override fun onPause() {
         // have to unregister this
         super.onPause()
