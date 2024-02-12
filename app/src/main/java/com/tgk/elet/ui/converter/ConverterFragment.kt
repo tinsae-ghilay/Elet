@@ -27,6 +27,7 @@ class ConverterFragment : Fragment() {
     private val binding get() = _binding!!
     private var months: List<Month>? = null
     private var gmonths: List<Month>? = null
+    // default status selected date = GeezDate today, and target Gregorian
     private var target:SwitchView.SwitchState = SwitchView.SwitchState.LEFT
     private var selectedDate:BaseDate = Util.today
 
@@ -91,25 +92,9 @@ class ConverterFragment : Fragment() {
     }
 
 
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
-    /*private val listener: OnDateSelectedListener = object : OnDateSelectedListener {
-        override fun selectedDate(date: BaseDate) {
-            selectedDate = date
-            Toast.makeText(requireContext(),"selected date is $selectedDate", Toast.LENGTH_SHORT).show()
-            val dateRequested = if (date is GeezDate){
-                DateLocal.fromJdn((selectedDate as GeezDate).julianDay)
-            }else {
-                GeezDate.from(selectedDate.year,selectedDate.month,selectedDate.date)
-            }
-            binding.selectedDate.text = dateRequested.format(DateFormat.MONTH_NAMED)
-        }
-    }*/
 }
 
