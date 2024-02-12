@@ -39,10 +39,11 @@ class ConverterFragment : Fragment() {
         val converterViewModel:ConverterViewModel by viewModels()
 
         _binding = FragmentConverterBinding.inflate(inflater, container, false)
+        // seting the default selected date to date at instance
         converterViewModel.setSelected(selectedDate)
-        //binding.selectedDate.text =Util.thisDay.format(DateFormat.MONTH_NAMED)
-
+        // show date picker dialog button
         binding.showDialog.setOnClickListener(onClick)
+        // calendar months
         converterViewModel.geezCalendar.observe(viewLifecycleOwner){
             months = it
         }
