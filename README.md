@@ -36,9 +36,8 @@ and the displayed months events are listed below.
 
 ## Contributions
 
-any suggestion for improvement is very welcome. I am also in need of collaboration if you are interested.
-contact information will be provided here when I set up a separate email for this purpose. for now it is possible to contact me on my email
-available on Play store.
+Any suggestion for improvement is very welcome. I am also in need of collaboration if you are interested.
+contact information will be provided here when I set up a separate email for this purpose. for now it is possible to contact me on my email available on Play store.
 
 
 
